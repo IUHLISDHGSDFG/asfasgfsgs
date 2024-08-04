@@ -63,7 +63,6 @@ proxies:
   - {name: "尼日利亚08", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-10759-region-ng_lagos-sessionID-qvvF-sessiontime-60", password: "JXyZ8h", udp: true}
 
 
-
 proxy-providers:
   主线路: {type: "http", url: "https://xiaobajie.eyedoll.site/api/v1/client/subscribe?token=6c7fb3ab868addff08d421f69ef8d4f2", interval: 86400, path: "./proxy_provider/jc.yaml", udp: false, health-check: {enable: true, interval: 600, url: "http://www.gstatic.com/generate_204"}}
 
