@@ -6,10 +6,10 @@ log-level: info
 external-controller: 127.0.0.1:9090
 
 proxies:
-  - {name: "专线-Frontend", type: "ss", server: "gz.xn--1lqrb57uoq8a.com", port: 21642, cipher: "aes-128-gcm", password: "382a4468-399d-4e82-b0da-65880f250a0a", udp: true}
-  - {name: "专线-Frontend-1", type: "ss", server: "gz.xn--1lqrb57uoq8a.com", port: 14779, cipher: "aes-128-gcm", password: "382a4468-399d-4e82-b0da-65880f250a0a", udp: true}
-  - {name: "专线-Frontend-2", type: "ss", server: "gz.xn--1lqrb57uoq8a.com", port: 11999, cipher: "aes-128-gcm", password: "382a4468-399d-4e82-b0da-65880f250a0a", udp: true}
-  - {name: "专线-Frontend-3", type: "ss", server: "gz.xn--1lqrb57uoq8a.com", port: 32736, cipher: "aes-128-gcm", password: "382a4468-399d-4e82-b0da-65880f250a0a", udp: true}
+  - {name: "专线-Frontend", type: "ss", server: "gaosu.laotiehj6.top", port: 10059, cipher: "aes-128-gcm", password: "24847c41-3b69-454b-a5a8-d2bb379d79d9", udp: true}
+  - {name: "专线-Frontend-1", type: "ss", server: "gaosu.laotiehj6.top", port: 40779, cipher: "aes-128-gcm", password: "24847c41-3b69-454b-a5a8-d2bb379d79d9", udp: true}
+  - {name: "专线-Frontend-2", type: "ss", server: "gz.xn--1lqrb57uoq8a.com", port: 42336, cipher: "aes-128-gcm", password: "24847c41-3b69-454b-a5a8-d2bb379d79d9", udp: true}
+  - {name: "专线-Frontend-3", type: "ss", server: "gz.xn--1lqrb57uoq8a.com", port: 32022, cipher: "aes-128-gcm", password: "24847c41-3b69-454b-a5a8-d2bb379d79d9", udp: true}
   - {name: "土耳其01", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4327-orderid-10000-region-tr_adana-sessionID-AOOk-sessiontime-5", password: "Aa112211", udp: true}
   - {name: "土耳其02", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4327-orderid-10000-region-tr_adana-sessionID-MG-sessiontime-5", password: "Aa112211", udp: true}
   - {name: "土耳其03", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4327-orderid-10000-region-tr_adana-sessionID-N3-sessiontime-5", password: "Aa112211", udp: true}
