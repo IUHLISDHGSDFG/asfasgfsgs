@@ -42,14 +42,14 @@ proxies:
   - {name: "缅甸06", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4327-orderid-10000-region-mm-sessionID-Ox-sessiontime-5", password: "Aa112211", udp: true}
   - {name: "缅甸07", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4327-orderid-10000-region-mm-sessionID-AsUn-sessiontime-5", password: "Aa112211", udp: true}
   - {name: "缅甸08", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4327-orderid-10000-region-mm-sessionID-TJPDK-sessiontime-5", password: "Aa112211", udp: true}
-  - {name: "尼日利亚01", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-10892-region-ng-sessionID-b5v9q-sessiontime-60", password: "JXyZ8h", udp: true}
-  - {name: "尼日利亚02", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-10892-region-ng-sessionID-4elGF-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "尼日利亚03", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-10892-region-ng-sessionID-Se-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "尼日利亚04", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-10892-region-ng-sessionID-xEq-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "尼日利亚05", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-10892-region-ng-sessionID-Q-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "尼日利亚06", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-10892-region-ng_lagos-sessionID-02J9o-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "尼日利亚07", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-10892-region-ng_lagos-sessionID-N-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "尼日利亚08", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-10892-region-ng_lagos-sessionID-qvvF-sessiontime-5", password: "JXyZ8h", udp: true}
+  - {name: "尼日利亚01", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-10942-region-ng-sessionID-s-sessiontime-5", password: "JXyZ8h", udp: true}
+  - {name: "尼日利亚02", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-10942-region-ng-sessionID-Xi41Dz-sessiontime-5", password: "JXyZ8h", udp: true}
+  - {name: "尼日利亚03", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-10892-region-ng-sessionID-x-sessiontime-5", password: "JXyZ8h", udp: true}
+  - {name: "尼日利亚04", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-10942-region-ng-sessionID-UZIx-sessiontime-5", password: "JXyZ8h", udp: true}
+  - {name: "尼日利亚05", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-10942-region-ng-sessionID-AQR-sessiontime-5", password: "JXyZ8h", udp: true}
+  - {name: "尼日利亚06", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-10892-region-ng_lagos-sessionID-Z9-sessiontime-5", password: "JXyZ8h", udp: true}
+  - {name: "尼日利亚07", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-10942-region-ng_lagos-sessionID-6q-sessiontime-5", password: "JXyZ8h", udp: true}
+  - {name: "尼日利亚08", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-10942-region-ng_lagos-sessionID-h-sessiontime-5", password: "JXyZ8h", udp: true}
 
 
 proxy-providers:
