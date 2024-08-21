@@ -111,24 +111,37 @@ proxy-groups:
   - {name: "专线-尼日利亚08", type: "relay", proxies: ["自动切换", "尼日利亚08"]}
 
 rules:
-  # 针对Google商店消费的规则
   - DOMAIN,payments.google.com,消费
   - DOMAIN-SUFFIX,payments-pa.googleapis.com,消费
   - DOMAIN,play-fe.googleapis.com,消费
-  - DOMAIN-SUFFIX,gvt1.com,主线路
-
-  # 针对Google相关服务的规则
   - DOMAIN,myaccount.google.com,主线路
   - DOMAIN-KEYWORD,accounts.google.com,主线路
+  - DOMAIN,sspanel.net,消费
   - DOMAIN-SUFFIX,google.com,主线路
   - DOMAIN-SUFFIX,googleapis.com,主线路
   - DOMAIN-SUFFIX,gstatic.com,主线路
   - DOMAIN-SUFFIX,ggpht.com,主线路
+  - DOMAIN-SUFFIX,gvt1.com,消费
   - DOMAIN-SUFFIX,android.com,主线路
   - DOMAIN-KEYWORD,google,主线路
   - DOMAIN-KEYWORD,gmail,主线路
   - DOMAIN-KEYWORD,youtube,主线路
+  - DOMAIN-SUFFIX,ipapi.co,主线路
+  - DOMAIN-SUFFIX,ip-api.com,主线路
+  - DOMAIN-SUFFIX,api.ip.sb,主线路
+  - DOMAIN-SUFFIX,IPInfo.io,主线路
+  - DOMAIN-SUFFIX,ipip.net,主线路
+  - DOMAIN-SUFFIX,skk.moe,主线路
+  - DOMAIN-KEYWORD,game,主线路
   - DOMAIN-KEYWORD,googlevideo.com,主线路
+  - DOMAIN-SUFFIX,1password.com,DIRECT
+  - DOMAIN-SUFFIX,vultr.com,DIRECT
+  - DOMAIN-SUFFIX,mb3admin.com,DIRECT
+  - DOMAIN-SUFFIX,rixcloud.io,DIRECT
+  - DOMAIN-SUFFIX,tempestapp.io,DIRECT
+  - DOMAIN-SUFFIX,baidu.com,DIRECT
+  - DOMAIN-SUFFIX,baidu-int.com,DIRECT
+  - DOMAIN-SUFFIX,erebor.douban.com,DIRECT
   - DOMAIN,mtalk.google.com,DIRECT
   - DOMAIN,alt1-mtalk.google.com,DIRECT
   - DOMAIN,alt2-mtalk.google.com,DIRECT
@@ -139,48 +152,15 @@ rules:
   - DOMAIN,alt7-mtalk.google.com,DIRECT
   - DOMAIN,alt8-mtalk.google.com,DIRECT
   - DOMAIN,alt9-mtalk.google.com,DIRECT
-
-  # 针对其他服务的规则
-  - DOMAIN-KEYWORD,game,主线路
-  - DOMAIN-SUFFIX,ipapi.co,主线路
-  - DOMAIN-SUFFIX,ip-api.com,主线路
-  - DOMAIN-SUFFIX,api.ip.sb,主线路
-  - DOMAIN-SUFFIX,IPInfo.io,主线路
-  - DOMAIN-SUFFIX,ipip.net,主线路
-  - DOMAIN-SUFFIX,skk.moe,主线路
+  - DOMAIN,captive.apple.com,DIRECT
+  - DOMAIN,time-ios.apple.com,DIRECT
+  - DOMAIN-SUFFIX,gateway.push-apple.com.akadns.net,DIRECT
+  - DOMAIN-SUFFIX,push.apple.com,DIRECT
   - DOMAIN-KEYWORD,github,主线路
   - DOMAIN-SUFFIX,github.com,主线路
   - DOMAIN-SUFFIX,flowercloud.net,主线路
   - DOMAIN-SUFFIX,socloud.me,主线路
   - DOMAIN-SUFFIX,ytoo.asia,主线路
   - DOMAIN-SUFFIX,ytoo.co.uk,主线路
-
-  # 直接访问的规则
-  - DOMAIN-SUFFIX,1password.com,DIRECT
-  - DOMAIN-SUFFIX,vultr.com,DIRECT
-  - DOMAIN-SUFFIX,mb3admin.com,DIRECT
-  - DOMAIN-SUFFIX,rixcloud.io,DIRECT
-  - DOMAIN-SUFFIX,tempestapp.io,DIRECT
-  - DOMAIN-SUFFIX,baidu.com,DIRECT
-  - DOMAIN-SUFFIX,baidu-int.com,DIRECT
-  - DOMAIN-SUFFIX,erebor.douban.com,DIRECT
-  - DOMAIN,captive.apple.com,DIRECT
-  - DOMAIN,time-ios.apple.com,DIRECT
-  - DOMAIN-SUFFIX,gateway.push-apple.com.akadns.net,DIRECT
-  - DOMAIN-SUFFIX,push.apple.com,DIRECT
-
-  # 针对Google商店消费的IP地址
-  - IP-CIDR,172.217.160.110/32,消费
-  - IP-CIDR,172.217.163.46/32,消费
-  - IP-CIDR,172.217.160.78/32,消费
-  - IP-CIDR,142.251.42.238/32,消费
-  - IP-CIDR,142.251.43.14/32,消费
-  - IP-CIDR,142.251.220.77/32,消费
-  - IP-CIDR,142.251.42.237/32,消费
-  - IP-CIDR,172.217.163.45/32,消费
-  - IP-CIDR,142.250.204.78/32,消费
-  - IP-CIDR,142.250.66.142/32,消费
-
-  # 其他匹配规则
   - GEOIP,CN,DIRECT
   - MATCH,主线路
