@@ -105,7 +105,7 @@ rules:
   - DOMAIN,payments.google.com,消费
   - DOMAIN-SUFFIX,payments-pa.googleapis.com,消费
   - DOMAIN,play-fe.googleapis.com,消费
-  - DOMAIN-SUFFIX,gvt1.com,主线路
+  - DOMAIN-SUFFIX,gvt1.com,消费
 
   # 针对Google相关服务的规则
   - DOMAIN,myaccount.google.com,主线路
