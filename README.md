@@ -6,13 +6,13 @@ log-level: info
 external-controller: 127.0.0.1:9090
 
 proxies:
-  - {name: "专线-Frontend", "type":"vmess","server":"yyhkv2r1.cdn.node.a.ddnsdlmy.xyz","port":20313,"uuid":"e0b165f8-a014-3a69-af0d-e8b08b7fe96d","alterId":0,"cipher":"auto","udp":true,"tags":"hk","network":"ws","ws-opts":{"path":"/acaaaad0-54f5-4e10-94bb-1e6ab04649e1.y.live02.m3u8"},"skip-cert-verify":false}
+  - {name: "专线-Frontend","type":"vmess","server":"yyhkv2r1.cdn.node.a.ddnsdlmy.xyz","port":20313,"uuid":"e0b165f8-a014-3a69-af0d-e8b08b7fe96d","alterId":0,"cipher":"auto","udp":true,"tags":"hk","network":"ws","ws-opts":{"path":"/acaaaad0-54f5-4e10-94bb-1e6ab04649e1.y.live02.m3u8"},"skip-cert-verify":false}
 
-  - {name: "专线-Frontend-1", "type":"vmess","server":"w96y.cdn.node.a.ddnsdlmy.xyz","port":20314,"uuid":"e0b165f8-a014-3a69-af0d-e8b08b7fe96d","alterId":0,"cipher":"auto","udp":true,"tags":"hk","network":"ws","ws-opts":{"path":"/acaaaad0-54f5-4e10-94bb-1e6ab04649e1.y.live02.m3u8"},"skip-cert-verify":false}
+  - {name: "专线-Frontend-1","type":"vmess","server":"w96y.cdn.node.a.ddnsdlmy.xyz","port":20314,"uuid":"e0b165f8-a014-3a69-af0d-e8b08b7fe96d","alterId":0,"cipher":"auto","udp":true,"tags":"hk","network":"ws","ws-opts":{"path":"/acaaaad0-54f5-4e10-94bb-1e6ab04649e1.y.live02.m3u8"},"skip-cert-verify":false}
 
-  - {name: "专线-Frontend-2", "type":"vmess","server":"78gb1.cdn.node.a.ddnsdlmy.xyz","port":20434,"uuid":"e0b165f8-a014-3a69-af0d-e8b08b7fe96d","alterId":0,"cipher":"auto","udp":true,"tags":"tw","network":"ws","ws-opts":{"path":"/acaaaad0-54f5-4e10-94bb-1e6ab04649e1.y.live02.m3u8"},"skip-cert-verify":false}
+  - {name: "专线-Frontend-2","type":"vmess","server":"78gb1.cdn.node.a.ddnsdlmy.xyz","port":20434,"uuid":"e0b165f8-a014-3a69-af0d-e8b08b7fe96d","alterId":0,"cipher":"auto","udp":true,"tags":"tw","network":"ws","ws-opts":{"path":"/acaaaad0-54f5-4e10-94bb-1e6ab04649e1.y.live02.m3u8"},"skip-cert-verify":false}
 
-  - {name: "专线-Frontend-3", "type":"vmess","server":"78gb1.cdn.node.a.ddnsdlmy.xyz","port":20435,"uuid":"e0b165f8-a014-3a69-af0d-e8b08b7fe96d","alterId":0,"cipher":"auto","udp":true,"tags":"tw","network":"ws","ws-opts":{"path":"/acaaaad0-54f5-4e10-94bb-1e6ab04649e1.y.live02.m3u8"},"skip-cert-verify":false}
+  - {name: "专线-Frontend-3","type":"vmess","server":"78gb1.cdn.node.a.ddnsdlmy.xyz","port":20435,"uuid":"e0b165f8-a014-3a69-af0d-e8b08b7fe96d","alterId":0,"cipher":"auto","udp":true,"tags":"tw","network":"ws","ws-opts":{"path":"/acaaaad0-54f5-4e10-94bb-1e6ab04649e1.y.live02.m3u8"},"skip-cert-verify":false}
 
   - {name: "土耳其01", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4327-orderid-10000-region-tr_adana-sessionID-AOOk-sessiontime-5", password: "Aa112211", udp: true}
   - {name: "土耳其02", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4327-orderid-10000-region-tr_adana-sessionID-MG-sessiontime-5", password: "Aa112211", udp: true}
