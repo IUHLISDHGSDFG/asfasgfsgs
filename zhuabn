@@ -53,11 +53,11 @@ proxies:
   - {name: "尼日利亚06", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-ng_lagos-sessionID-7nq0-sessiontime-5", password: "JXyZ8h", udp: true}
   - {name: "尼日利亚07", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-ng_lagos-sessionID-BqE-sessiontime-5", password: "JXyZ8h", udp: true}
   - {name: "尼日利亚08", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-ng_lagos-sessionID-6M6KWk-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "印度01", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_nagaland-sessionID-i-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "印度02", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_nagaland-sessionID-vhDsE9-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "印度03", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_nagaland-sessionID-9I-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "印度04", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_nagaland-sessionID-nA3-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "印度05", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_nagaland-sessionID-xahm-sessiontime-5", password: "JXyZ8h", udp: true}
+  - {name: "印度01", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-in_nagaland-sessionID-i-sessiontime-5", password: "JXyZ8h", udp: true}
+  - {name: "印度02", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-in_nagaland-sessionID-vhDsE9-sessiontime-5", password: "JXyZ8h", udp: true}
+  - {name: "印度03", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-in_nagaland-sessionID-9I-sessiontime-5", password: "JXyZ8h", udp: true}
+  - {name: "印度04", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-in_nagaland-sessionID-nA3-sessiontime-5", password: "JXyZ8h", udp: true}
+  - {name: "印度05", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-in_nagaland-sessionID-xahm-sessiontime-5", password: "JXyZ8h", udp: true}
 
 proxy-providers:
   主线路: {type: "http", url: "https://s.youyun666.site/link/a62OXqHdgtr4x6VM?clash=1", interval: 86400, path: "./proxy_provider/jc.yaml", udp: false, health-check: {enable: true, interval: 600, url: "http://www.gstatic.com/generate_204"}}
