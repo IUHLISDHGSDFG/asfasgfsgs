@@ -102,7 +102,7 @@ proxy-groups:
   - {name: "专线-尼日利亚06", type: "relay", proxies: ["自动切换", "尼日利亚06"]}
   - {name: "专线-尼日利亚07", type: "relay", proxies: ["自动切换", "尼日利亚07"]}
   - {name: "专线-尼日利亚08", type: "relay", proxies: ["自动切换", "尼日利亚08"]}
-
+  - {name: "专线-印度01", type: "relay", proxies: ["自动切换", "印度01"]}
 rules:
   # 针对Google商店消费的规则
   - DOMAIN,payments.google.com,消费
