@@ -6,10 +6,14 @@ log-level: info
 external-controller: 127.0.0.1:9090
 
 proxies:
-  - {name: "专线-Frontend", type: "ss", server: "gaosu.laotiehj6.top", port: 40779, cipher: "aes-128-gcm", password: "382a4468-399d-4e82-b0da-65880f250a0a", udp: true}
-  - {name: "专线-Frontend-1", type: "ss", server: "gz.xn--1lqrb57uoq8a.com", port: 14779, cipher: "aes-128-gcm", password: "382a4468-399d-4e82-b0da-65880f250a0a", udp: true}
-  - {name: "专线-Frontend-2", type: "ss", server: "gaosu.laotiehj6.top", port: 11999, cipher: "aes-128-gcm", password: "382a4468-399d-4e82-b0da-65880f250a0a", udp: true}
-  - {name: "专线-Frontend-3", type: "ss", server: "gz.xn--1lqrb57uoq8a.com", port: 37038, cipher: "aes-128-gcm", password: "382a4468-399d-4e82-b0da-65880f250a0a", udp: true}
+  - {name: "专线-Frontend", "type":"vmess","server":"yyhkv2r1.cdn.node.a.ddnsdlmy.xyz","port":20313,"uuid":"a3cbbdc0-0164-3cc3-bb8d-0498e6b87bf5","alterId":0,"cipher":"auto","udp":true,"tags":"hk","network":"ws","ws-opts":{"path":"/acaaaad0-54f5-4e10-94bb-1e6ab04649e1.y.live02.m3u8"},"skip-cert-verify":false}
+
+  - {name: "专线-Frontend-1", "type":"vmess","server":"w96y.cdn.node.a.ddnsdlmy.xyz","port":20549,"uuid":"a3cbbdc0-0164-3cc3-bb8d-0498e6b87bf5","alterId":0,"cipher":"auto","udp":true,"tags":"hk","network":"ws","ws-opts":{"path":"/acaaaad0-54f5-4e10-94bb-1e6ab04649e1.y.live02.m3u8"},"skip-cert-verify":false}
+
+  - {name: "专线-Frontend-2", "type":"vmess","server":"xrby1.cdn.node.a.ddnsdlmy.xyz","port":20638,"uuid":"a3cbbdc0-0164-3cc3-bb8d-0498e6b87bf5","alterId":0,"cipher":"auto","udp":true,"tags":"jp","network":"ws","ws-opts":{"path":"/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"},"skip-cert-verify":false}
+
+  - {name: "专线-Frontend-3", "type":"vmess","server":"yyrbjp.cdn.node.a.ddnsdlmy.xyz","port":20670,"uuid":"a3cbbdc0-0164-3cc3-bb8d-0498e6b87bf5","alterId":0,"cipher":"auto","udp":true,"tags":"jp","network":"ws","ws-opts":{"path":"/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"},"skip-cert-verify":false}
+
   - {name: "土耳其01", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-2-sessiontime-5", password: "JXyZ8h", udp: true}
   - {name: "土耳其02", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-Ipn-sessiontime-5", password: "JXyZ8h", udp: true}
   - {name: "土耳其03", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-JJcpp-sessiontime-5", password: "JXyZ8h", udp: true}
@@ -18,46 +22,13 @@ proxies:
   - {name: "土耳其06", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-2kvcEb-sessiontime-5", password: "JXyZ8h", udp: true}
   - {name: "土耳其07", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-Ib7B-sessiontime-5", password: "JXyZ8h", udp: true}
   - {name: "土耳其08", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-Rbvg-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "印度尼西亚01", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-id-sessionID-tG-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "印度尼西亚02", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-id-sessionID-XoKS2b-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "印度尼西亚03", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-id-sessionID-r7yJKw-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "印度尼西亚04", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-id-sessionID-BQi539-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "印度尼西亚05", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-id-sessionID-3-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "印度尼西亚06", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-id-sessionID-T-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "印度尼西亚07", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-id-sessionID-RfT3dY-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "印度尼西亚08", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-id-sessionID-ytdv-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "埃及01", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-eg-sessionID-a72Qrz-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "埃及02", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-eg-sessionID-kHVj4-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "埃及03", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-eg-sessionID-3QrZP-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "埃及04", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-eg-sessionID-iDtsN-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "埃及05", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-eg-sessionID-k-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "埃及06", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-eg-sessionID-M-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "埃及07", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-eg-sessionID-c4v3I-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "埃及08", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-eg-sessionID-8-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "缅甸01", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-mm-sessionID-TAdFf-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "缅甸02", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-mm-sessionID-zyjNM2-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "缅甸03", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-mm-sessionID-XDo-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "缅甸04", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-mm-sessionID-WdDL-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "缅甸05", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-mm-sessionID-ohidz-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "缅甸06", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-mm-sessionID-k-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "缅甸07", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-mm-sessionID-Ag4-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "缅甸08", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-mm-sessionID-ShT1-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "尼日利亚01", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-ng-sessionID-Kn-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "尼日利亚02", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-ng-sessionID-E-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "尼日利亚03", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-ng-sessionID-qEl-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "尼日利亚04", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-ng-sessionID-X-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "尼日利亚05", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-ng-sessionID-9Usi-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "尼日利亚06", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-ng_lagos-sessionID-7nq0-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "尼日利亚07", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-ng_lagos-sessionID-BqE-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "尼日利亚08", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-ng_lagos-sessionID-6M6KWk-sessiontime-5", password: "JXyZ8h", udp: true}
-
-
+  
 proxy-providers:
-  主线路: {type: "http", url: "https://xiaobajie.eyedoll.site/api/v1/client/subscribe?token=6c7fb3ab868addff08d421f69ef8d4f2", interval: 86400, path: "./proxy_provider/jc.yaml", udp: false, health-check: {enable: true, interval: 600, url: "http://www.gstatic.com/generate_204"}}
+  主线路: {type: "http", url: "https://s.youyun666.site/link/CYHpN4zuU7pAbR0F?clash=1", interval: 86400, path: "./proxy_provider/jc.yaml", udp: false, health-check: {enable: true, interval: 600, url: "http://www.gstatic.com/generate_204"}}
 
 proxy-groups:
   - {name: "主线路", type: "select", use: ["主线路"], health-check: {enable: true, interval: 60, url: "http://www.gstatic.com/generate_204"}}
-  - {name: "消费", type: "select", proxies: ["专线-土耳其01", "专线-土耳其02", "专线-土耳其03", "专线-土耳其04", "专线-土耳其05", "专线-土耳其06", "专线-土耳其07", "专线-土耳其08", "专线-印度尼西亚01", "专线-印度尼西亚02", "专线-印度尼西亚03", "专线-印度尼西亚04", "专线-印度尼西亚05", "专线-印度尼西亚06", "专线-印度尼西亚07", "专线-印度尼西亚08", "专线-埃及01", "专线-埃及02", "专线-埃及03", "专线-埃及04", "专线-埃及05", "专线-埃及06", "专线-埃及07", "专线-埃及08", "专线-缅甸01", "专线-缅甸02", "专线-缅甸03", "专线-缅甸04", "专线-缅甸05", "专线-缅甸06", "专线-缅甸07", "专线-缅甸08", "专线-尼日利亚01", "专线-尼日利亚02", "专线-尼日利亚03", "专线-尼日利亚04", "专线-尼日利亚05", "专线-尼日利亚06", "专线-尼日利亚07", "专线-尼日利亚08"]}
+  - {name: "消费", type: "select", proxies: ["专线-土耳其01", "专线-土耳其02", "专线-土耳其03", "专线-土耳其04", "专线-土耳其05", "专线-土耳其06", "专线-土耳其07", "专线-土耳其08", "专线-印度尼西亚01", "专线-印度尼西亚02", "专线-印度尼西亚03", "专线-印度尼西亚04", "专线-印度尼西亚05", "专线-印度尼西亚06", "专线-印度尼西亚07", "专线-印度尼西亚08", "专线-埃及01", "专线-埃及02", "专线-埃及03", "专线-埃及04", "专线-埃及05", "专线-埃及06", "专线-埃及07", "专线-埃及08", "专线-缅甸01", "专线-缅甸02", "专线-缅甸03", "专线-缅甸04", "专线-缅甸05", "专线-缅甸06", "专线-缅甸07", "专线-缅甸08", "专线-尼日利亚01", "专线-尼日利亚02", "专线-尼日利亚03", "专线-尼日利亚04", "专线-尼日利亚05", "专线-尼日利亚06", "专线-尼日利亚07", "专线-尼日利亚08", "专线-印度01", "专线-印度02", "专线-印度03", "专线-印度04", "专线-印度05"]}
   - {name: "自动切换", type: "fallback", url: "http://www.gstatic.com/generate_204", interval: 30, proxies: ["专线-Frontend", "专线-Frontend-2", "专线-Frontend-3", "专线-Frontend-1"]}
   - {name: "专线-土耳其01", type: "relay", proxies: ["自动切换", "土耳其01"]}
   - {name: "专线-土耳其02", type: "relay", proxies: ["自动切换", "土耳其02"]}
@@ -67,45 +38,13 @@ proxy-groups:
   - {name: "专线-土耳其06", type: "relay", proxies: ["自动切换", "土耳其06"]}
   - {name: "专线-土耳其07", type: "relay", proxies: ["自动切换", "土耳其07"]}
   - {name: "专线-土耳其08", type: "relay", proxies: ["自动切换", "土耳其08"]}
-  - {name: "专线-印度尼西亚01", type: "relay", proxies: ["自动切换", "印度尼西亚01"]}
-  - {name: "专线-印度尼西亚02", type: "relay", proxies: ["自动切换", "印度尼西亚02"]}
-  - {name: "专线-印度尼西亚03", type: "relay", proxies: ["自动切换", "印度尼西亚03"]}
-  - {name: "专线-印度尼西亚04", type: "relay", proxies: ["自动切换", "印度尼西亚04"]}
-  - {name: "专线-印度尼西亚05", type: "relay", proxies: ["自动切换", "印度尼西亚05"]}
-  - {name: "专线-印度尼西亚06", type: "relay", proxies: ["自动切换", "印度尼西亚06"]}
-  - {name: "专线-印度尼西亚07", type: "relay", proxies: ["自动切换", "印度尼西亚07"]}
-  - {name: "专线-印度尼西亚08", type: "relay", proxies: ["自动切换", "印度尼西亚08"]}
-  - {name: "专线-埃及01", type: "relay", proxies: ["自动切换", "埃及01"]}
-  - {name: "专线-埃及02", type: "relay", proxies: ["自动切换", "埃及02"]}
-  - {name: "专线-埃及03", type: "relay", proxies: ["自动切换", "埃及03"]}
-  - {name: "专线-埃及04", type: "relay", proxies: ["自动切换", "埃及04"]}
-  - {name: "专线-埃及05", type: "relay", proxies: ["自动切换", "埃及05"]}
-  - {name: "专线-埃及06", type: "relay", proxies: ["自动切换", "埃及06"]}
-  - {name: "专线-埃及07", type: "relay", proxies: ["自动切换", "埃及07"]}
-  - {name: "专线-埃及08", type: "relay", proxies: ["自动切换", "埃及08"]}
-  - {name: "专线-缅甸01", type: "relay", proxies: ["自动切换", "缅甸01"]}
-  - {name: "专线-缅甸02", type: "relay", proxies: ["自动切换", "缅甸02"]}
-  - {name: "专线-缅甸03", type: "relay", proxies: ["自动切换", "缅甸03"]}
-  - {name: "专线-缅甸04", type: "relay", proxies: ["自动切换", "缅甸04"]}
-  - {name: "专线-缅甸05", type: "relay", proxies: ["自动切换", "缅甸05"]}
-  - {name: "专线-缅甸06", type: "relay", proxies: ["自动切换", "缅甸06"]}
-  - {name: "专线-缅甸07", type: "relay", proxies: ["自动切换", "缅甸07"]}
-  - {name: "专线-缅甸08", type: "relay", proxies: ["自动切换", "缅甸08"]}
-  - {name: "专线-尼日利亚01", type: "relay", proxies: ["自动切换", "尼日利亚01"]}
-  - {name: "专线-尼日利亚02", type: "relay", proxies: ["自动切换", "尼日利亚02"]}
-  - {name: "专线-尼日利亚03", type: "relay", proxies: ["自动切换", "尼日利亚03"]}
-  - {name: "专线-尼日利亚04", type: "relay", proxies: ["自动切换", "尼日利亚04"]}
-  - {name: "专线-尼日利亚05", type: "relay", proxies: ["自动切换", "尼日利亚05"]}
-  - {name: "专线-尼日利亚06", type: "relay", proxies: ["自动切换", "尼日利亚06"]}
-  - {name: "专线-尼日利亚07", type: "relay", proxies: ["自动切换", "尼日利亚07"]}
-  - {name: "专线-尼日利亚08", type: "relay", proxies: ["自动切换", "尼日利亚08"]}
-
+  
 rules:
   # 针对Google商店消费的规则
   - DOMAIN,payments.google.com,消费
   - DOMAIN-SUFFIX,payments-pa.googleapis.com,消费
   - DOMAIN,play-fe.googleapis.com,消费
-  - DOMAIN-SUFFIX,gvt1.com,消费
+  - DOMAIN-SUFFIX,gvt1.com,主线路
 
   # 针对Google相关服务的规则
   - DOMAIN,myaccount.google.com,主线路
