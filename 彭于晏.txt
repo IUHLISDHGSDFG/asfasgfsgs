@@ -41,8 +41,8 @@ proxy-groups:
   - {name: "专线-土耳其07", type: "relay", proxies: ["自动切换", "土耳其07"]}
   - {name: "专线-土耳其08", type: "relay", proxies: ["自动切换", "土耳其08"]}
   - {name: "专线-加拿大01", type: "relay", proxies: ["自动切换", "加拿大01"]}
-  - {name: "专线-加拿大02", type: "relay", proxies: ["自动切换", "加拿大01"]}
-  - {name: "专线-加拿大03", type: "relay", proxies: ["自动切换", "加拿大01"]}
+  - {name: "专线-加拿大02", type: "relay", proxies: ["自动切换", "加拿大02"]}
+  - {name: "专线-加拿大03", type: "relay", proxies: ["自动切换", "加拿大03"]}
 rules:
   # 针对Google商店消费的规则
   - DOMAIN,payments.google.com,消费
