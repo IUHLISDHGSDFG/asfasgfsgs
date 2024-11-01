@@ -22,9 +22,9 @@ proxies:
   - {name: "土耳其06", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-2kvcEb-sessiontime-5", password: "JXyZ8h", udp: true}
   - {name: "土耳其07", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-Ib7B-sessiontime-5", password: "JXyZ8h", udp: true}
   - {name: "土耳其08", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-Rbvg-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "加拿大01", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-ca_adana-sessionID-q-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "加拿大02", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-ca_adana-sessionID-nWq-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "加拿大03", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-ca_adana-sessionID-4n-sessiontime-5", password: "JXyZ8h", udp: true}
+  - {name: "加拿大01", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-ca_albert-sessionID-kUka-sessiontime-5", password: "JXyZ8h", udp: true}
+  - {name: "加拿大02", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-ca_alberta-sessionID-WCvMa-sessiontime-5", password: "JXyZ8h", udp: true}
+  - {name: "加拿大03", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-ca_alberta-sessionID-7o-sessiontime-5", password: "JXyZ8h", udp: true}
 proxy-providers:
   主线路: {type: "http", url: "https://s.youyun666.site/link/CYHpN4zuU7pAbR0F?clash=1", interval: 86400, path: "./proxy_provider/jc.yaml", udp: false, health-check: {enable: true, interval: 600, url: "http://www.gstatic.com/generate_204"}}
 
