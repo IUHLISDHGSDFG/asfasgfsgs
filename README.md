@@ -21,7 +21,7 @@ proxies:
   - {name: "土耳其05", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4327-orderid-10000-region-tr_adana-sessionID-1Jf-sessiontime-5", password: "Aa112211", udp: true}
   - {name: "土耳其06", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4327-orderid-10000-region-tr_adana-sessionID-dfL3A-sessiontime-5", password: "Aa112211", udp: true}
   - {name: "土耳其07", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4327-orderid-10000-region-tr_adana-sessionID-XaZQc-sessiontime-5", password: "Aa112211", udp: true}
-  - {name: "土耳其08", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4327-orderid-10000-region-tr_adana-sessionID-oAX3-sessiontime-5", password: "Aa112211", udp: true}
+  - {name: "土耳其08", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-C3l-sessiontime-5", password: "Aa112211", udp: true}
   - {name: "印度尼西亚01", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4327-orderid-10000-region-id-sessionID-cBfV-sessiontime-5", password: "Aa112211", udp: true}
   - {name: "印度尼西亚02", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4327-orderid-10000-region-id-sessionID-fi2a-sessiontime-5", password: "Aa112211", udp: true}
   - {name: "印度尼西亚03", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4327-orderid-10000-region-id-sessionID-laGzr-sessiontime-5", password: "Aa112211", udp: true}
