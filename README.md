@@ -14,18 +14,18 @@ proxies:
 
   - {name: "专线-Frontend-3","type":"vmess","server":"78gb1.cdn.node.a.ddnsdlmy.xyz","port":20435,"uuid":"e0b165f8-a014-3a69-af0d-e8b08b7fe96d","alterId":0,"cipher":"auto","udp":true,"tags":"tw","network":"ws","ws-opts":{"path":"/acaaaad0-54f5-4e10-94bb-1e6ab04649e1.y.live02.m3u8"},"skip-cert-verify":false}
 
-  - {name: "土耳其01", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4327-orderid-10000-region-tr_adana-sessionID-AOOk-sessiontime-5", password: "Aa112211", udp: true}
-  - {name: "土耳其02", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4327-orderid-10000-region-tr_adana-sessionID-MG-sessiontime-5", password: "Aa112211", udp: true}
-  - {name: "土耳其03", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4327-orderid-10000-region-tr_adana-sessionID-N3-sessiontime-5", password: "Aa112211", udp: true}
-  - {name: "土耳其04", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4327-orderid-10000-region-tr_adana-sessionID-c-sessiontime-5", password: "Aa112211", udp: true}
-  - {name: "土耳其05", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4327-orderid-10000-region-tr_adana-sessionID-1Jf-sessiontime-5", password: "Aa112211", udp: true}
-  - {name: "土耳其06", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4327-orderid-10000-region-tr_adana-sessionID-dfL3A-sessiontime-5", password: "Aa112211", udp: true}
-  - {name: "土耳其07", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4327-orderid-10000-region-tr_adana-sessionID-XaZQc-sessiontime-5", password: "Aa112211", udp: true}
-  - {name: "土耳其08", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-C3l-sessiontime-5", password: "Aa112211", udp: true}
+  - {name: "土耳其01", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-AOOk-sessiontime-30", password: "JXyZ8h", udp: true}
+  - {name: "土耳其02", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-MG-sessiontime-30", password: "JXyZ8h", udp: true}
+  - {name: "土耳其03", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-N3-sessiontime-30", password: "JXyZ8h", udp: true}
+  - {name: "土耳其04", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-c-sessiontime-30", password: "JXyZ8h", udp: true}
+  - {name: "土耳其05", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-1Jf-sessiontime-30", password: "JXyZ8h", udp: true}
+  - {name: "土耳其06", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-dfL3A-sessiontime-30", password: "JXyZ8h", udp: true}
+  - {name: "土耳其07", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-XaZQc-sessiontime-30", password: "JXyZ8h", udp: true}
+  - {name: "土耳其08", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-C3l-sessiontime-30", password: "JXyZ8h", udp: true}
   
 
 proxy-providers:
-  主线路: {type: "http", url: "https://xiaobajie.eyedoll.site/api/v1/client/subscribe?token=6c7fb3ab868addff08d421f69ef8d4f2", interval: 86400, path: "./proxy_provider/jc.yaml", udp: false, health-check: {enable: true, interval: 600, url: "http://www.gstatic.com/generate_204"}}
+  主线路: {type: "http", url: "https://s.youyun666.site/link/Jl8KDJeKIX99tViu?clash=1", interval: 86400, path: "./proxy_provider/jc.yaml", udp: false, health-check: {enable: true, interval: 600, url: "http://www.gstatic.com/generate_204"}}
 
 proxy-groups:
   - {name: "主线路", type: "select", use: ["主线路"], health-check: {enable: true, interval: 60, url: "http://www.gstatic.com/generate_204"}}
