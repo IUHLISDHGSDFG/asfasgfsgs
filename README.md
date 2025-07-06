@@ -14,22 +14,26 @@ proxies:
 
   - {name: "专线-Frontend-3","type":"vmess","server":"3cxs1.cdn.node.a.ddnsdlmy.xyz","port":20648,"uuid":"5019b33d-f5ea-38a4-a295-64d172543efc","alterId":0,"cipher":"auto","udp":true,"tags":"my","network":"ws","ws-opts":{"path":"/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"},"skip-cert-verify":false}
 
-  - {name: "土耳其01", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-AOOk-sessiontime-30", password: "JXyZ8h", udp: true}
-  - {name: "土耳其02", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-MG-sessiontime-30", password: "JXyZ8h", udp: true}
-  - {name: "土耳其03", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-N3-sessiontime-30", password: "JXyZ8h", udp: true}
-  - {name: "土耳其04", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-c-sessiontime-30", password: "JXyZ8h", udp: true}
+  - {name: "土耳其01", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-AOfdsOk-sessiontime-30", password: "JXyZ8h", udp: true}
+  - {name: "土耳其02", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-MfsdG-sessiontime-30", password: "JXyZ8h", udp: true}
+  - {name: "土耳其03", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-Nsd3-sessiontime-30", password: "JXyZ8h", udp: true}
+  - {name: "土耳其04", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-cdfgd-sessiontime-30", password: "JXyZ8h", udp: true}
   - {name: "土耳其05", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-1Jf-sessiontime-30", password: "JXyZ8h", udp: true}
-  - {name: "土耳其06", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-dfL3A-sessiontime-30", password: "JXyZ8h", udp: true}
-  - {name: "土耳其07", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-XaZQc-sessiontime-30", password: "JXyZ8h", udp: true}
-  - {name: "土耳其08", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-C3l-sessiontime-30", password: "JXyZ8h", udp: true}
-  
+  - {name: "土耳其06", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-df7L3A-sessiontime-30", password: "JXyZ8h", udp: true}
+  - {name: "土耳其07", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-Xa8ZQc-sessiontime-30", password: "JXyZ8h", udp: true}
+  - {name: "土耳其08", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-C483l-sessiontime-30", password: "JXyZ8h", udp: true}
+  - {name: "土耳其09", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-1J464f-sessiontime-30", password: "JXyZ8h", udp: true}
+  - {name: "土耳其10", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-dfLgsfg3A-sessiontime-30", password: "JXyZ8h", udp: true}
+  - {name: "土耳其11", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-XaZ5456Qc-sessiontime-30", password: "JXyZ8h", udp: true}
+  - {name: "土耳其12", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-C3fdgdgl-sessiontime-30", password: "JXyZ8h", udp: true}
+    
 
 proxy-providers:
   主线路: {type: "http", url: "https://s.youyun666.site/link/Jl8KDJeKIX99tViu?clash=1", interval: 86400, path: "./proxy_provider/jc.yaml", udp: false, health-check: {enable: true, interval: 600, url: "http://www.gstatic.com/generate_204"}}
 
 proxy-groups:
   - {name: "主线路", type: "select", use: ["主线路"], health-check: {enable: true, interval: 60, url: "http://www.gstatic.com/generate_204"}}
-  - {name: "消费", type: "select", proxies: ["专线-土耳其01", "专线-土耳其02", "专线-土耳其03", "专线-土耳其04", "专线-土耳其05", "专线-土耳其06", "专线-土耳其07", "专线-土耳其08"]}
+  - {name: "消费", type: "select", proxies: ["专线-土耳其01", "专线-土耳其02", "专线-土耳其03", "专线-土耳其04", "专线-土耳其05", "专线-土耳其06", "专线-土耳其07", "专线-土耳其08", "专线-土耳其09", "专线-土耳其10", "专线-土耳其11", "专线-土耳其12"]}
   - {name: "自动切换", type: "fallback", url: "http://www.gstatic.com/generate_204", interval: 30, proxies: ["专线-Frontend", "专线-Frontend-2", "专线-Frontend-3", "专线-Frontend-1"]}
   - {name: "专线-土耳其01", type: "relay", proxies: ["自动切换", "土耳其01"]}
   - {name: "专线-土耳其02", type: "relay", proxies: ["自动切换", "土耳其02"]}
@@ -39,7 +43,10 @@ proxy-groups:
   - {name: "专线-土耳其06", type: "relay", proxies: ["自动切换", "土耳其06"]}
   - {name: "专线-土耳其07", type: "relay", proxies: ["自动切换", "土耳其07"]}
   - {name: "专线-土耳其08", type: "relay", proxies: ["自动切换", "土耳其08"]}
-  
+  - {name: "专线-土耳其09", type: "relay", proxies: ["自动切换", "土耳其09"]}
+  - {name: "专线-土耳其10", type: "relay", proxies: ["自动切换", "土耳其10"]}
+  - {name: "专线-土耳其11", type: "relay", proxies: ["自动切换", "土耳其11"]}
+  - {name: "专线-土耳其12", type: "relay", proxies: ["自动切换", "土耳其12"]}  
 
 rules:
   - DOMAIN,payments.google.com,消费
