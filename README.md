@@ -7,7 +7,8 @@ external-controller: 127.0.0.1:9090
 
 proxies:
   - {name: "专线-Frontend","type":"server":"6a9f4.cdn.node.a.cndyybcerk.xyz","port":20623,"uuid":"5019b33d-f5ea-38a4-a295-64d172543efc","alterId":0,"cipher":"auto","udp":true,"tags":"tw","network":"ws","ws-opts":{"path":"/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"},"skip-cert-verify":false}
-  - {name: "专线-Frontend-1","type":"server":"ys60vaxj.cdn.node.a.cndyybcerk.xyz","port":20566,"uuid":"5019b33d-f5ea-38a4-a295-64d172543efc","alterId":0,"cipher":"auto","udp":true,"tags":"hk","network":"ws","ws-opts":{"path":"/3c675bf1-d618-42de-a358-498396d49cc6.y.live04.m3u8"},"skip-cert-verify":false}
+
+  - {name: "专线-Frontend-1","type":"server":"6a9f4.cdn.node.a.cndyybcerk.xyz","port":20627,"uuid":"5019b33d-f5ea-38a4-a295-64d172543efc","alterId":0,"cipher":"auto","udp":true,"tags":"tw","network":"ws","ws-opts":{"path":"/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"},"skip-cert-verify":false}
 
   - {name: "专线-Frontend-2","type":"server":"6a9f4.cdn.node.a.cndyybcerk.xyz","port":20621,"uuid":"5019b33d-f5ea-38a4-a295-64d172543efc","alterId":0,"cipher":"auto","udp":true,"tags":"tw","network":"ws","ws-opts":{"path":"/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"},"skip-cert-verify":false}
 
