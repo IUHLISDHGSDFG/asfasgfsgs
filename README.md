@@ -7,12 +7,8 @@ external-controller: 127.0.0.1:9090
 
 proxies:
   - {name: "专线-Frontend","type":"vmess","server":"f15q.cdn.node.a.cndyybcerk.xyz","port":20426,"uuid":"5019b33d-f5ea-38a4-a295-64d172543efc","alterId":0,"cipher":"auto","udp":true,"tags":"hk","network":"ws","ws-opts":{"path":"/197c2808-5cda-4362-b137-e82cd56d87cc.y.live03.m3u8"},"skip-cert-verify":false}
-
-
   - {name: "专线-Frontend-1","type":"vmess","server":"t9e6.cdn.node.a.cndyybcerk.xyz","port":20478,"uuid":"5019b33d-f5ea-38a4-a295-64d172543efc","alterId":0,"cipher":"auto","udp":true,"tags":"hk","network":"ws","ws-opts":{"path":"/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"},"skip-cert-verify":false}
-
   - {name: "专线-Frontend-2","type":"server":"t9e6.cdn.node.a.cndyybcerk.xyz","port":20484,"uuid":"5019b33d-f5ea-38a4-a295-64d172543efc","alterId":0,"cipher":"auto","udp":true,"tags":"hk","network":"ws","ws-opts":{"path":"/197c2808-5cda-4362-b137-e82cd56d87cc.y.live03.m3u8"},"skip-cert-verify":false}
-
   - {name: "专线-Frontend-3","type":"server":"gtncmd.cdn.node.a.cndyybcerk.xyz","port":20505,"uuid":"5019b33d-f5ea-38a4-a295-64d172543efc","alterId":0,"cipher":"auto","udp":true,"tags":"sg","network":"ws","ws-opts":{"path":"/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"},"skip-cert-verify":false}
 
   - {name: "土耳其01", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-AOfdsOk-sessiontime-30", password: "JXyZ8h", udp: true}
