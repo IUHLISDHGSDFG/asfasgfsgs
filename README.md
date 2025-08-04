@@ -15,18 +15,18 @@ proxies:
   - {name: "专线-Frontend-3","type":"ssr","server":"yjpas1.cdn.node.a.cndyybcerk.xyz","port":20338,"cipher":"chacha20-ietf","password":"JXpZpq","protocol":"auth_aes128_md5","protocol-param":"418789:BFo1NYaKGI9","obfs":"tls1.2_ticket_auth","obfs-param":"207ac418789.cloudfront.com,cloudflare.com,itunes.apple.com,www.icloud.com,ajax.microsoft.com,apps.bdimg.com,www.bing.com","udp":true,"tags":"jp"}
 
 
-  - {name: "土耳其01", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-AOfdsOk-sessiontime-30", password: "JXyZ8h", udp: true}
-  - {name: "土耳其02", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-MfsdG-sessiontime-30", password: "JXyZ8h", udp: true}
-  - {name: "土耳其03", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-Nsd3-sessiontime-30", password: "JXyZ8h", udp: true}
-  - {name: "土耳其04", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-cdfgd-sessiontime-30", password: "JXyZ8h", udp: true}
-  - {name: "土耳其05", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-1Jf-sessiontime-30", password: "JXyZ8h", udp: true}
-  - {name: "土耳其06", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-df7L3A-sessiontime-30", password: "JXyZ8h", udp: true}
-  - {name: "土耳其07", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-Xa8ZQc-sessiontime-30", password: "JXyZ8h", udp: true}
-  - {name: "土耳其08", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-C483l-sessiontime-30", password: "JXyZ8h", udp: true}
-  - {name: "土耳其09", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-1J464f-sessiontime-30", password: "JXyZ8h", udp: true}
-  - {name: "土耳其10", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-dfLgsfg3A-sessiontime-30", password: "JXyZ8h", udp: true}
-  - {name: "土耳其11", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-XaZ5456Qc-sessiontime-30", password: "JXyZ8h", udp: true}
-  - {name: "土耳其12", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-C3fdgdgl-sessiontime-30", password: "JXyZ8h", udp: true}
+  - {name: "土耳其01", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-GnSEKB-sessiontime-10", password: "JXyZ8h", udp: true}
+  - {name: "土耳其02", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-mKYwom-sessiontime-10", password: "JXyZ8h", udp: true}
+  - {name: "土耳其03", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-mKYwom-sessiontime-10", password: "JXyZ8h", udp: true}
+  - {name: "土耳其04", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-0-sessiontime-10", password: "JXyZ8h", udp: true}
+  - {name: "土耳其05", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-i7k3U-sessiontime-10", password: "JXyZ8h", udp: true}
+  - {name: "土耳其06", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-4NLB-sessiontime-10", password: "JXyZ8h", udp: true}
+  - {name: "土耳其07", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-UIMvZ-sessiontime-10", password: "JXyZ8h", udp: true}
+  - {name: "土耳其08", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-p-sessiontime-10", password: "JXyZ8h", udp: true}
+  - {name: "土耳其09", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-y-sessiontime-10", password: "JXyZ8h", udp: true}
+  - {name: "土耳其10", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-dfLgsfg3A-sessiontime-10", password: "JXyZ8h", udp: true}
+  - {name: "土耳其11", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-XaZ5456Qc-sessiontime-10", password: "JXyZ8h", udp: true}
+  - {name: "土耳其12", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-C3fdgdgl-sessiontime-10", password: "JXyZ8h", udp: true}
     
 
 proxy-providers:
