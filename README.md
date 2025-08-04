@@ -6,10 +6,13 @@ log-level: info
 external-controller: 127.0.0.1:9090
 
 proxies:
-  - {name: "专线-Frontend","type":"ssr","server":"gtncmd.cdn.node.a.cndyybcerk.xyz","port":20504,"cipher":"chacha20-ietf","password":"JXpZpq","protocol":"auth_aes128_md5","protocol-param":"418789:BFo1NYaKGI9","obfs":"tls1.2_ticket_auth","obfs-param":"207ac418789.cloudfront.com,cloudflare.com,itunes.apple.com,www.icloud.com,ajax.microsoft.com,apps.bdimg.com,www.bing.com","udp":true,"tags":"sg"}
-  - {name: "专线-Frontend-1","type":"ssr","server":"6a9f4.cdn.node.a.cndyybcerk.xyz","port":20620,"cipher":"chacha20-ietf","password":"JXpZpq","protocol":"auth_aes128_md5","protocol-param":"418789:BFo1NYaKGI9","obfs":"tls1.2_ticket_auth","obfs-param":"207ac418789.cloudfront.com,cloudflare.com,itunes.apple.com,www.icloud.com,ajax.microsoft.com,apps.bdimg.com,www.bing.com","udp":true,"tags":"tw"}
-  - {name: "专线-Frontend-2","type":"ssr","server":"yyrbjp.cdn.node.a.cndyybcerk.xyz","port":20662,"cipher":"chacha20-ietf","password":"JXpZpq","protocol":"auth_aes128_md5","protocol-param":"418789:BFo1NYaKGI9","obfs":"tls1.2_ticket_auth","obfs-param":"207ac418789.cloudfront.com,cloudflare.com,itunes.apple.com,www.icloud.com,ajax.microsoft.com,apps.bdimg.com,www.bing.com","udp":true,"tags":"jp"}
-  - {name: "专线-Frontend-3","type":"ssr","server":"y60xjq.cdn.node.a.cndyybcerk.xyz","port":20687,"cipher":"chacha20-ietf","password":"JXpZpq","protocol":"auth_aes128_md5","protocol-param":"418789:BFo1NYaKGI9","obfs":"tls1.2_ticket_auth","obfs-param":"207ac418789.cloudfront.com,cloudflare.com,itunes.apple.com,www.icloud.com,ajax.microsoft.com,apps.bdimg.com,www.bing.com","udp":true,"tags":"hk"}
+  - {name: "专线-Frontend","type":"vmess","server":"yyhkv2r1.cdn.node.a.cndyybcerk.xyz","port":20643,"uuid":"5019b33d-f5ea-38a4-a295-64d172543efc","alterId":0,"cipher":"auto","udp":true,"tags":"hk","network":"ws","ws-opts":{"path":"/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"},"skip-cert-verify":false}
+
+  - {name: "专线-Frontend-1","type":"vmess","server":"yyrbjp.cdn.node.a.cndyybcerk.xyz","port":20672,"uuid":"5019b33d-f5ea-38a4-a295-64d172543efc","alterId":0,"cipher":"auto","udp":true,"tags":"jp","network":"ws","ws-opts":{"path":"/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"},"skip-cert-verify":false}
+
+  - {name: "专线-Frontend-2","type":"vmess","server":"yyrbjp.cdn.node.a.cndyybcerk.xyz","port":20674,"uuid":"5019b33d-f5ea-38a4-a295-64d172543efc","alterId":0,"cipher":"auto","udp":true,"tags":"jp","network":"ws","ws-opts":{"path":"/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"},"skip-cert-verify":false}
+
+  - {name: "专线-Frontend-3","type":"ssr","server":"yjpas1.cdn.node.a.cndyybcerk.xyz","port":20338,"cipher":"chacha20-ietf","password":"JXpZpq","protocol":"auth_aes128_md5","protocol-param":"418789:BFo1NYaKGI9","obfs":"tls1.2_ticket_auth","obfs-param":"207ac418789.cloudfront.com,cloudflare.com,itunes.apple.com,www.icloud.com,ajax.microsoft.com,apps.bdimg.com,www.bing.com","udp":true,"tags":"jp"}
 
 
   - {name: "土耳其01", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-AOfdsOk-sessiontime-30", password: "JXyZ8h", udp: true}
