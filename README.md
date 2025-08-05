@@ -8,29 +8,24 @@ external-controller: 127.0.0.1:9090
 proxies:
   - {name: "专线-Frontend","type":"vmess","server":"yjpas1.cdn.node.a.cndyybcerk.xyz","port":20523,"uuid":"5019b33d-f5ea-38a4-a295-64d172543efc","alterId":0,"cipher":"auto","udp":true,"tags":"jp","network":"ws","ws-opts":{"path":"/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"},"skip-cert-verify":false}
 
-
   - {name: "专线-Frontend-1","type":"vmess","server":"6a9f4.cdn.node.a.cndyybcerk.xyz","port":20623,"uuid":"5019b33d-f5ea-38a4-a295-64d172543efc","alterId":0,"cipher":"auto","udp":true,"tags":"tw","network":"ws","ws-opts":{"path":"/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"},"skip-cert-verify":false}
-
 
   - {name: "专线-Frontend-2","type":"vmess","server":"6a9f4.cdn.node.a.cndyybcerk.xyz","port":20629,"uuid":"5019b33d-f5ea-38a4-a295-64d172543efc","alterId":0,"cipher":"auto","udp":true,"tags":"tw","network":"ws","ws-opts":{"path":"/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"},"skip-cert-verify":false}
 
-
   - {name: "专线-Frontend-3","type":"vmess","server":"yyhkv2r1.cdn.node.a.cndyybcerk.xyz","port":20644,"uuid":"5019b33d-f5ea-38a4-a295-64d172543efc","alterId":0,"cipher":"auto","udp":true,"tags":"hk","network":"ws","ws-opts":{"path":"/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"},"skip-cert-verify":false}
 
-
-
-  - {name: "土耳其01", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-GnSEKB-sessiontime-10", password: "JXyZ8h", udp: true}
-  - {name: "土耳其02", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-mKYwom-sessiontime-10", password: "JXyZ8h", udp: true}
-  - {name: "土耳其03", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-mKYwom-sessiontime-10", password: "JXyZ8h", udp: true}
-  - {name: "土耳其04", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-0-sessiontime-10", password: "JXyZ8h", udp: true}
-  - {name: "土耳其05", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-i7k3U-sessiontime-10", password: "JXyZ8h", udp: true}
-  - {name: "土耳其06", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-4NLB-sessiontime-10", password: "JXyZ8h", udp: true}
-  - {name: "土耳其07", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-UIMvZ-sessiontime-10", password: "JXyZ8h", udp: true}
-  - {name: "土耳其08", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-p-sessiontime-10", password: "JXyZ8h", udp: true}
-  - {name: "土耳其09", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-y-sessiontime-10", password: "JXyZ8h", udp: true}
-  - {name: "土耳其10", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-dfLgsfg3A-sessiontime-10", password: "JXyZ8h", udp: true}
-  - {name: "土耳其11", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-XaZ5456Qc-sessiontime-10", password: "JXyZ8h", udp: true}
-  - {name: "土耳其12", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-C3fdgdgl-sessiontime-10", password: "JXyZ8h", udp: true}
+  - {name: "土耳其01", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-Q1w-sessiontime-20", password: "JXyZ8h", udp: true}
+  - {name: "土耳其02", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-ztS-sessiontime-20", password: "JXyZ8h", udp: true}
+  - {name: "土耳其03", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-X7o-sessiontime-20", password: "JXyZ8h", udp: true}
+  - {name: "土耳其04", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-YPX-sessiontime-20", password: "JXyZ8h", udp: true}
+  - {name: "土耳其05", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-c5-sessiontime-20", password: "JXyZ8h", udp: true}
+  - {name: "土耳其06", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-6jKTSQ-sessiontime-20", password: "JXyZ8h", udp: true}
+  - {name: "土耳其07", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-3WmZyA-sessiontime-20", password: "JXyZ8h", udp: true}
+  - {name: "土耳其08", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-Q-sessiontime-20", password: "JXyZ8h", udp: true}
+  - {name: "土耳其09", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-p-sessiontime-20", password: "JXyZ8h", udp: true}
+  - {name: "土耳其10", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-B3ad-sessiontime-20", password: "JXyZ8h", udp: true}
+  - {name: "土耳其11", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-Vq1Sv-sessiontime-20", password: "JXyZ8h", udp: true}
+  - {name: "土耳其12", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-qApNow-sessiontime-20", password: "JXyZ8h", udp: true}
     
 
 proxy-providers:
