@@ -12,8 +12,7 @@ proxies:
 
   - {name: "专线-Frontend-2","type":"vmess","server":"t9e6.cdn.node.a.cndyybcerk.xyz","port":20478,"uuid":"04aad97e-67de-3155-a1ba-4f717be84887","alterId":0,"cipher":"auto","udp":true,"tags":"hk","network":"ws","ws-opts":{"path":"/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"},"skip-cert-verify":false}
 
-  - {name: "专线-Frontend-3","type":"vmess","server":"t9e6.cdn.node.a.cndyybcerk.xyz","port":20489,"uuid":"04aad97e-67de-3155-a1ba-4f717be84887","alterId":0,"cipher":"auto","udp":true,"tags":"hk","network":"ws","ws-opts":{"path":"/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"},"skip-cert-verify":false}
-
+  - {name: "专线-Frontend-3","type":"vmess","server":"gtncmd.cdn.node.a.cndyybcerk.xyz","port":20505,"uuid":"04aad97e-67de-3155-a1ba-4f717be84887","alterId":0,"cipher":"auto","udp":true,"tags":"sg","network":"ws","ws-opts":{"path":"/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"},"skip-cert-verify":false}
 
   - {name: "土耳其01", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-8tqGT-sessiontime-20", password: "JXyZ8h", udp: true}
   - {name: "土耳其02", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-AX-sessiontime-20", password: "JXyZ8h", udp: true}
