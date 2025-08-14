@@ -6,13 +6,13 @@ log-level: info
 external-controller: 127.0.0.1:9090
 
 proxies:
-  - {name: "专线-Frontend","type":"ssr","server":"6a9f4.cdn.node.a.cndyybcerk.xyz","port":20618,"cipher":"chacha20-ietf","password":"JXpZpq","protocol":"auth_aes128_md5","protocol-param":"418789:PyDOP7k69ZK","obfs":"tls1.2_ticket_auth","obfs-param":"7c364418789.cloudfront.com,cloudflare.com,itunes.apple.com,www.icloud.com,ajax.microsoft.com,apps.bdimg.com,www.bing.com","udp":true,"tags":"tw"}
+  - {name: "专线-Frontend","type":"vmess","server":"gtncmd.cdn.node.a.cndyybcerk.xyz","port":20265,"uuid":"04aad97e-67de-3155-a1ba-4f717be84887","alterId":0,"cipher":"auto","udp":true,"tags":"sg","network":"ws","ws-opts":{"path":"/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"},"skip-cert-verify":false}
 
-  - {name: "专线-Frontend-1","type":"ssr","server":"6a9f4.cdn.node.a.cndyybcerk.xyz","port":20626,"cipher":"chacha20-ietf","password":"JXpZpq","protocol":"auth_aes128_md5","protocol-param":"418789:PyDOP7k69ZK","obfs":"tls1.2_ticket_auth","obfs-param":"7c364418789.cloudfront.com,cloudflare.com,itunes.apple.com,www.icloud.com,ajax.microsoft.com,apps.bdimg.com,www.bing.com","udp":true,"tags":"tw"}
+  - {name: "专线-Frontend-1","type":"vmess","server":"f15q.cdn.node.a.cndyybcerk.xyz","port":20426,"uuid":"04aad97e-67de-3155-a1ba-4f717be84887","alterId":0,"cipher":"auto","udp":true,"tags":"hk","network":"ws","ws-opts":{"path":"/197c2808-5cda-4362-b137-e82cd56d87cc.y.live03.m3u8"},"skip-cert-verify":false}
 
-  - {name: "专线-Frontend-2","type":"ssr","server":"yyrbjp.cdn.node.a.cndyybcerk.xyz","port":20664,"cipher":"chacha20-ietf","password":"JXpZpq","protocol":"auth_aes128_md5","protocol-param":"418789:PyDOP7k69ZK","obfs":"tls1.2_ticket_auth","obfs-param":"7c364418789.cloudfront.com,cloudflare.com,itunes.apple.com,www.icloud.com,ajax.microsoft.com,apps.bdimg.com,www.bing.com","udp":true,"tags":"jp"}
+  - {name: "专线-Frontend-2","type":"vmess","server":"t9e6.cdn.node.a.cndyybcerk.xyz","port":20478,"uuid":"04aad97e-67de-3155-a1ba-4f717be84887","alterId":0,"cipher":"auto","udp":true,"tags":"hk","network":"ws","ws-opts":{"path":"/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"},"skip-cert-verify":false}
 
-  - {name: "专线-Frontend-3","type":"vmess","server":"yyhkv2r1.cdn.node.a.cndyybcerk.xyz","port":20644,"uuid":"04aad97e-67de-3155-a1ba-4f717be84887","alterId":0,"cipher":"auto","udp":true,"tags":"hk","network":"ws","ws-opts":{"path":"/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"},"skip-cert-verify":false}
+  - {name: "专线-Frontend-3","type":"vmess","server":"t9e6.cdn.node.a.cndyybcerk.xyz","port":20489,"uuid":"04aad97e-67de-3155-a1ba-4f717be84887","alterId":0,"cipher":"auto","udp":true,"tags":"hk","network":"ws","ws-opts":{"path":"/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"},"skip-cert-verify":false}
 
 
   - {name: "土耳其01", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-8tqGT-sessiontime-20", password: "JXyZ8h", udp: true}
