@@ -29,7 +29,7 @@ proxies:
     
 
 proxy-providers:
-   主线路: {type: "http", url: "https://s.youyun666.site/link/txnesz9eZt0IMWa8?clash=1", interval: 86400, path: "./proxy_provider/jc.yaml", udp: false, health-check: {enable: true, interval: 600, url: "http://www.gstatic.com/generate_204"}}
+   主线路: {type: "http", url: "https://s.youyun666.site/link/9kMd9ZopfWYYwv8b?clash=1", interval: 86400, path: "./proxy_provider/jc.yaml", udp: false, health-check: {enable: true, interval: 600, url: "http://www.gstatic.com/generate_204"}}
 
 proxy-groups:
   - {name: "主线路", type: "select", use: ["主线路"], health-check: {enable: true, interval: 60, url: "http://www.gstatic.com/generate_204"}}
