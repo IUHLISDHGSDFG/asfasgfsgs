@@ -6,62 +6,60 @@ log-level: info
 external-controller: 127.0.0.1:9090
 
 proxies:
-  - {name: "专线-Frontend", "type":"vmess","server":"f15q.cdn.node.a.ddnsdlmy.xyz","port":20426,"uuid":"a3cbbdc0-0164-3cc3-bb8d-0498e6b87b","alterId":0,"cipher":"auto","udp":true,"tags":"hk","network":"ws","ws-opts":{"path":"/acaaaad0-54f5-4e10-94bb-1e6ab04649e1.y.live02.m3u8"},"skip-cert-verify":false}
 
-  - {name: "专线-Frontend-1", "type":"vmess","server":"ap15ad.cdn.node.a.ddnsdlmy.xyz","port":20505,"uuid":"a3cbbdc0-0164-3cc3-bb8d-0498e6b87bf5","alterId":0,"cipher":"auto","udp":true,"tags":"hk","network":"ws","ws-opts":{"path":"/acaaaad0-54f5-4e10-94bb-1e6ab04649e1.y.live02.m3u8"},"skip-cert-verify":false}
-
-  - {name: "专线-Frontend-2", "type":"vmess","server":"xrby1.cdn.node.a.ddnsdlmy.xyz","port":20600,"uuid":"a3cbbdc0-0164-3cc3-bb8d-0498e6b87bf5","alterId":0,"cipher":"auto","udp":true,"tags":"jp","network":"ws","ws-opts":{"path":"/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"},"skip-cert-verify":false}
-
-  - {name: "专线-Frontend-3", "type":"vmess","server":"6a9f4.cdn.node.a.ddnsdlmy.xyz","port":20627,"uuid":"a3cbbdc0-0164-3cc3-bb8d-0498e6b87bf5","alterId":0,"cipher":"auto","udp":true,"tags":"jp","network":"ws","ws-opts":{"path":"/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"},"skip-cert-verify":false}
-
-  - {name: "土耳其01", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-2-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "土耳其02", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-Ipn-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "土耳其03", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-JJcpp-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "土耳其04", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-6D-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "土耳其05", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-N6F-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "土耳其06", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-2kvcEb-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "土耳其07", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-Ib7B-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "土耳其08", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-tr_adana-sessionID-Rbvg-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "加拿大01", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-ca_albert-sessionID-kUka-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "加拿大02", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-ca_alberta-sessionID-WCvMa-sessiontime-5", password: "JXyZ8h", udp: true}
-  - {name: "加拿大03", type: "socks5", server: "asdata.lumidaili.com", port: "10000", username: "userID-4558-orderid-11074-region-ca_alberta-sessionID-7o-sessiontime-5", password: "JXyZ8h", udp: true}
-proxy-providers:
-  主线路: {type: "http", url: "https://s.youyun666.site/link/CYHpN4zuU7pAbR0F?clash=1", interval: 86400, path: "./proxy_provider/jc.yaml", udp: false, health-check: {enable: true, interval: 600, url: "http://www.gstatic.com/generate_204"}}
 
 proxy-groups:
-  - {name: "主线路", type: "select", use: ["主线路"], health-check: {enable: true, interval: 60, url: "http://www.gstatic.com/generate_204"}}
-  - {name: "消费", type: "select", proxies: ["专线-土耳其01", "专线-土耳其02", "专线-土耳其03", "专线-土耳其04", "专线-土耳其05", "专线-土耳其06", "专线-土耳其07", "专线-土耳其08", "专线-加拿大01", "专线-加拿大02", "专线-加拿大03"]}
-  - {name: "自动切换", type: "fallback", url: "http://www.gstatic.com/generate_204", interval: 30, proxies: ["专线-Frontend", "专线-Frontend-2", "专线-Frontend-3", "专线-Frontend-1"]}
-  - {name: "专线-土耳其01", type: "relay", proxies: ["自动切换", "土耳其01"]}
-  - {name: "专线-土耳其02", type: "relay", proxies: ["自动切换", "土耳其02"]}
-  - {name: "专线-土耳其03", type: "relay", proxies: ["自动切换", "土耳其03"]}
-  - {name: "专线-土耳其04", type: "relay", proxies: ["自动切换", "土耳其04"]}
-  - {name: "专线-土耳其05", type: "relay", proxies: ["自动切换", "土耳其05"]}
-  - {name: "专线-土耳其06", type: "relay", proxies: ["自动切换", "土耳其06"]}
-  - {name: "专线-土耳其07", type: "relay", proxies: ["自动切换", "土耳其07"]}
-  - {name: "专线-土耳其08", type: "relay", proxies: ["自动切换", "土耳其08"]}
-  - {name: "专线-加拿大01", type: "relay", proxies: ["自动切换", "加拿大01"]}
-  - {name: "专线-加拿大02", type: "relay", proxies: ["自动切换", "加拿大02"]}
-  - {name: "专线-加拿大03", type: "relay", proxies: ["自动切换", "加拿大03"]}
+
+{name: "主线路", type: "select", use: ["主线路"], health-check: {enable: true, interval: 60, url: "http://www.gstatic.com/generate_204"}}
+{name: "消费", type: "select", proxies: ["专线-土耳其01", "专线-土耳其02", "专线-土耳其03", "专线-土耳其04", "专线-土耳其05", "专线-土耳其06", "专线-土耳其07", "专线-土耳其08", "专线-土耳其09", "专线-土耳其10", "专线-土耳其11", "专线-土耳其12"]}
+{name: "自动切换", type: "fallback", url: "http://www.gstatic.com/generate_204", interval: 30, proxies: ["专线-Frontend", "专线-Frontend-2", "专线-Frontend-3", "专线-Frontend-1"]}
+{name: "专线-土耳其01", type: "relay", proxies: ["自动切换", "土耳其01"]}
+{name: "专线-土耳其02", type: "relay", proxies: ["自动切换", "土耳其02"]}
+{name: "专线-土耳其03", type: "relay", proxies: ["自动切换", "土耳其03"]}
+{name: "专线-土耳其04", type: "relay", proxies: ["自动切换", "土耳其04"]}
+{name: "专线-土耳其05", type: "relay", proxies: ["自动切换", "土耳其05"]}
+{name: "专线-土耳其06", type: "relay", proxies: ["自动切换", "土耳其06"]}
+{name: "专线-土耳其07", type: "relay", proxies: ["自动切换", "土耳其07"]}
+{name: "专线-土耳其08", type: "relay", proxies: ["自动切换", "土耳其08"]}
+{name: "专线-土耳其09", type: "relay", proxies: ["自动切换", "土耳其09"]}
+{name: "专线-土耳其10", type: "relay", proxies: ["自动切换", "土耳其10"]}
+{name: "专线-土耳其11", type: "relay", proxies: ["自动切换", "土耳其11"]}
+{name: "专线-土耳其12", type: "relay", proxies: ["自动切换", "土耳其12"]}
+
+
+
 rules:
-  # 针对Google商店消费的规则
   - DOMAIN,payments.google.com,消费
   - DOMAIN-SUFFIX,payments-pa.googleapis.com,消费
   - DOMAIN,play-fe.googleapis.com,消费
-  - DOMAIN-SUFFIX,gvt1.com,主线路
-
-  # 针对Google相关服务的规则
   - DOMAIN,myaccount.google.com,主线路
   - DOMAIN-KEYWORD,accounts.google.com,主线路
+  - DOMAIN,sspanel.net,消费
   - DOMAIN-SUFFIX,google.com,主线路
   - DOMAIN-SUFFIX,googleapis.com,主线路
   - DOMAIN-SUFFIX,gstatic.com,主线路
   - DOMAIN-SUFFIX,ggpht.com,主线路
+  - DOMAIN-SUFFIX,gvt1.com,消费
   - DOMAIN-SUFFIX,android.com,主线路
   - DOMAIN-KEYWORD,google,主线路
   - DOMAIN-KEYWORD,gmail,主线路
   - DOMAIN-KEYWORD,youtube,主线路
+  - DOMAIN-SUFFIX,ipapi.co,主线路
+  - DOMAIN-SUFFIX,ip-api.com,主线路
+  - DOMAIN-SUFFIX,api.ip.sb,主线路
+  - DOMAIN-SUFFIX,IPInfo.io,主线路
+  - DOMAIN-SUFFIX,ipip.net,主线路
+  - DOMAIN-SUFFIX,skk.moe,主线路
+  - DOMAIN-KEYWORD,game,主线路
   - DOMAIN-KEYWORD,googlevideo.com,主线路
+  - DOMAIN-SUFFIX,1password.com,DIRECT
+  - DOMAIN-SUFFIX,vultr.com,DIRECT
+  - DOMAIN-SUFFIX,mb3admin.com,DIRECT
+  - DOMAIN-SUFFIX,rixcloud.io,DIRECT
+  - DOMAIN-SUFFIX,tempestapp.io,DIRECT
+  - DOMAIN-SUFFIX,baidu.com,DIRECT
+  - DOMAIN-SUFFIX,baidu-int.com,DIRECT
+  - DOMAIN-SUFFIX,erebor.douban.com,DIRECT
   - DOMAIN,mtalk.google.com,DIRECT
   - DOMAIN,alt1-mtalk.google.com,DIRECT
   - DOMAIN,alt2-mtalk.google.com,DIRECT
@@ -72,48 +70,15 @@ rules:
   - DOMAIN,alt7-mtalk.google.com,DIRECT
   - DOMAIN,alt8-mtalk.google.com,DIRECT
   - DOMAIN,alt9-mtalk.google.com,DIRECT
-
-  # 针对其他服务的规则
-  - DOMAIN-KEYWORD,game,主线路
-  - DOMAIN-SUFFIX,ipapi.co,主线路
-  - DOMAIN-SUFFIX,ip-api.com,主线路
-  - DOMAIN-SUFFIX,api.ip.sb,主线路
-  - DOMAIN-SUFFIX,IPInfo.io,主线路
-  - DOMAIN-SUFFIX,ipip.net,主线路
-  - DOMAIN-SUFFIX,skk.moe,主线路
+  - DOMAIN,captive.apple.com,DIRECT
+  - DOMAIN,time-ios.apple.com,DIRECT
+  - DOMAIN-SUFFIX,gateway.push-apple.com.akadns.net,DIRECT
+  - DOMAIN-SUFFIX,push.apple.com,DIRECT
   - DOMAIN-KEYWORD,github,主线路
   - DOMAIN-SUFFIX,github.com,主线路
   - DOMAIN-SUFFIX,flowercloud.net,主线路
   - DOMAIN-SUFFIX,socloud.me,主线路
   - DOMAIN-SUFFIX,ytoo.asia,主线路
   - DOMAIN-SUFFIX,ytoo.co.uk,主线路
-
-  # 直接访问的规则
-  - DOMAIN-SUFFIX,1password.com,DIRECT
-  - DOMAIN-SUFFIX,vultr.com,DIRECT
-  - DOMAIN-SUFFIX,mb3admin.com,DIRECT
-  - DOMAIN-SUFFIX,rixcloud.io,DIRECT
-  - DOMAIN-SUFFIX,tempestapp.io,DIRECT
-  - DOMAIN-SUFFIX,baidu.com,DIRECT
-  - DOMAIN-SUFFIX,baidu-int.com,DIRECT
-  - DOMAIN-SUFFIX,erebor.douban.com,DIRECT
-  - DOMAIN,captive.apple.com,DIRECT
-  - DOMAIN,time-ios.apple.com,DIRECT
-  - DOMAIN-SUFFIX,gateway.push-apple.com.akadns.net,DIRECT
-  - DOMAIN-SUFFIX,push.apple.com,DIRECT
-
-  # 针对Google商店消费的IP地址
-  - IP-CIDR,172.217.160.110/32,消费
-  - IP-CIDR,172.217.163.46/32,消费
-  - IP-CIDR,172.217.160.78/32,消费
-  - IP-CIDR,142.251.42.238/32,消费
-  - IP-CIDR,142.251.43.14/32,消费
-  - IP-CIDR,142.251.220.77/32,消费
-  - IP-CIDR,142.251.42.237/32,消费
-  - IP-CIDR,172.217.163.45/32,消费
-  - IP-CIDR,142.250.204.78/32,消费
-  - IP-CIDR,142.250.66.142/32,消费
-
-  # 其他匹配规则
   - GEOIP,CN,DIRECT
   - MATCH,主线路
