@@ -7,9 +7,6 @@ external-controller: 127.0.0.1:9090
 
 proxies:
 
-
-proxy-groups:
-
 {name: "主线路", type: "select", use: ["主线路"], health-check: {enable: true, interval: 60, url: "http://www.gstatic.com/generate_204"}}
 {name: "消费", type: "select", proxies: ["专线-土耳其01", "专线-土耳其02", "专线-土耳其03", "专线-土耳其04", "专线-土耳其05", "专线-土耳其06", "专线-土耳其07", "专线-土耳其08", "专线-土耳其09", "专线-土耳其10", "专线-土耳其11", "专线-土耳其12"]}
 {name: "自动切换", type: "fallback", url: "http://www.gstatic.com/generate_204", interval: 30, proxies: ["专线-Frontend", "专线-Frontend-2", "专线-Frontend-3", "专线-Frontend-1"]}
@@ -82,3 +79,4 @@ rules:
   - DOMAIN-SUFFIX,ytoo.co.uk,主线路
   - GEOIP,CN,DIRECT
   - MATCH,主线路
+
