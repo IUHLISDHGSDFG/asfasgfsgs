@@ -5,7 +5,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 
-# 1. 订阅源
+# 1. 订阅源优化
 proxy-providers:
   主线路:
     type: http
@@ -16,10 +16,12 @@ proxy-providers:
       enable: true
       interval: 600
       url: "http://www.gstatic.com/generate_204"
-  # 注意：API返回的纯文本在部分客户端可能需转换，这里保持标准格式
+
+  # 使用转换服务将你的 API 转换为 Clash 格式
   土耳其动态源:
     type: http
-    url: "http://usapi.udealproxy.com:7777/iplist?custom=3711&password=KB50dS&num=5&re_type=1&lb=1&region=tr&st=adana&city=adana"
+    # 这里通过后端转换器处理你的 API 链接
+    url: "https://sub.xeton.dev/sub?target=clash&url=http%3A%2F%2Fusapi.udealproxy.com%3A7777%2Fiplist%3Fcustom%3D3711%26password%3DKB50dS%26num%3D5%26re_type%3D1%26lb%3D1%26region%3Dtr%26st%3Dadana%26city%3Dadana&insert=false"
     interval: 300
     path: "./proxy_provider/tr_api.yaml"
     health-check:
@@ -27,12 +29,12 @@ proxy-providers:
       interval: 60
       url: "http://www.gstatic.com/generate_204"
 
-# 2. 静态前置节点
+# 2. 静态前置节点 (保持原样)
 proxies:
   - {name: "前置-1", type: "ss", server: "gz.xn--1lqrb57uoq8a.com", port: 21642, cipher: "aes-128-gcm", password: "382a4468-399d-4e82-b0da-65880f250a0a", udp: true}
   - {name: "前置-2", type: "ss", server: "gz.xn--1lqrb57uoq8a.com", port: 14779, cipher: "aes-128-gcm", password: "382a4468-399d-4e82-b0da-65880f250a0a", udp: true}
 
-# 3. 策略组 (确保这里的横杠 - 后面有空格，且上下对齐)
+# 3. 策略组
 proxy-groups:
   - name: "主线路"
     type: select
@@ -60,6 +62,5 @@ rules:
   - DOMAIN,play-fe.googleapis.com,消费
   - DOMAIN,sspanel.net,消费
   - DOMAIN-SUFFIX,google.com,主线路
-  - DOMAIN-KEYWORD,github,主线路
   - GEOIP,CN,DIRECT
   - MATCH,主线路
