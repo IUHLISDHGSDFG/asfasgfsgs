@@ -1,4 +1,3 @@
-# Clash 优化配置文件 - 解决 API 报错版本
 port: 7890
 socks-port: 7891
 allow-lan: true
@@ -6,52 +5,49 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 
-# 1. 代理提供者 (自动更新源)
+# 1. 代理节点配置
+proxies:
+  # 保留原有的高性能前置节点 
+  - {name: "前置-1", type: "ss", server: "gz.xn--1lqrb57uoq8a.com", port: 21642, cipher: "aes-128-gcm", password: "382a4468-399d-4e82-b0da-65880f250a0a", udp: true}
+  - {name: "前置-2", type: "ss", server: "gz.xn--1lqrb57uoq8a.com", port: 14779, cipher: "aes-128-gcm", password: "382a4468-399d-4e82-b0da-65880f250a0a", udp: true}
+  
+  # 替换为你提供的最新土耳其落地节点
+  - {name: "土耳其-落地01", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-1DAiGs-sessTime-5", password: "KB50dS", udp: true}
+  - {name: "土耳其-落地02", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-DCVw-sessTime-5", password: "KB50dS", udp: true}
+  - {name: "土耳其-落地03", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-NlZEQ-sessTime-5", password: "KB50dS", udp: true}
+  - {name: "土耳其-落地04", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-C-sessTime-5", password: "KB50dS", udp: true}
+  - {name: "土耳其-落地05", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-16-sessTime-5", password: "KB50dS", udp: true}
+
+# 2. 订阅提供者
 proxy-providers:
   主线路:
     type: http
     url: "https://s.youyun666.site/link/0RHTFWqnOFZ68SlY?clash=1"
     interval: 86400
     path: "./proxy_provider/main_sub.yaml"
-    health-check:
-      enable: true
-      interval: 600
-      url: "http://www.gstatic.com/generate_204"
-
-  # 关键修复：通过转换器处理你的 API 链接，防止 YAML 解析错误
-  土耳其动态源:
-    type: http
-    url: "https://sub.xeton.dev/sub?target=clash&url=http%3A%2F%2Fusapi.udealproxy.com%3A7777%2Fiplist%3Fcustom%3D3711%26password%3DKB50dS%26num%3D5%26re_type%3D1%26lb%3D1%26region%3Dtr%26st%3Dadana%26city%3Dadana&insert=false"
-    interval: 300
-    path: "./proxy_provider/tr_api.yaml"
-    health-check:
-      enable: true
-      interval: 60
-      url: "http://www.gstatic.com/generate_204"
-
-# 2. 静态前置节点 (保留你原有的 SS 节点) [cite: 4]
-proxies:
-  - {name: "前置-1", type: "ss", server: "gz.xn--1lqrb57uoq8a.com", port: 21642, cipher: "aes-128-gcm", password: "382a4468-399d-4e82-b0da-65880f250a0a", udp: true}
-  - {name: "前置-2", type: "ss", server: "gz.xn--1lqrb57uoq8a.com", port: 14779, cipher: "aes-128-gcm", password: "382a4468-399d-4e82-b0da-65880f250a0a", udp: true}
-  - {name: "前置-3", type: "ss", server: "gz.xn--1lqrb57uoq8a.com", port: 11999, cipher: "aes-128-gcm", password: "382a4468-399d-4e82-b0da-65880f250a0a", udp: true}
+    health-check: {enable: true, interval: 600, url: "http://www.gstatic.com/generate_204"}
 
 # 3. 策略组优化
 proxy-groups:
-  # 自动选择最快的前置节点 [cite: 1, 12]
-  - {name: "前置自动切换", type: "fallback", url: "http://www.gstatic.com/generate_204", interval: 30, proxies: ["前置-1", "前置-2", "前置-3"]}
+  # 自动选择最快的前置节点 
+  - {name: "前置自动切换", type: "fallback", url: "http://www.gstatic.com/generate_204", interval: 30, proxies: ["前置-1", "前置-2"]}
+
+  # 消费组：通过中继模式关联前置与落地
+  - {name: "消费", type: "select", proxies: ["专线-土耳其01", "专线-土耳其02", "专线-土耳其03"]}
 
   - {name: "主线路", type: "select", use: ["主线路"]}
 
-  # 消费专线：前置加密加速 + 土耳其动态落地 [cite: 1, 11]
-  - {name: "消费", type: "relay", proxies: ["前置自动切换", "土耳其动态源"]}
+  # 中继链路：前置节点 -> 落地节点 
+  - {name: "专线-土耳其01", type: "relay", proxies: ["前置自动切换", "土耳其-落地01"]}
+  - {name: "专线-土耳其02", type: "relay", proxies: ["前置自动切换", "土耳其-落地02"]}
+  - {name: "专线-土耳其03", type: "relay", proxies: ["前置自动切换", "土耳其-落地03"]}
 
-# 4. 分流规则 [cite: 1, 16]
+# 4. 分流规则 
 rules:
   - DOMAIN,payments.google.com,消费
   - DOMAIN-SUFFIX,payments-pa.googleapis.com,消费
   - DOMAIN,play-fe.googleapis.com,消费
   - DOMAIN,sspanel.net,消费
   - DOMAIN-SUFFIX,google.com,主线路
-  - DOMAIN-KEYWORD,github,主线路
   - GEOIP,CN,DIRECT
   - MATCH,主线路
