@@ -3,6 +3,7 @@ socks-port: 7891
 allow-lan: true
 mode: Rule
 log-level: info
+ipv6: false  # 强制关闭 IPv6，防止分流失效导致商店无网络
 external-controller: 127.0.0.1:9090
 
 # 1. 代理节点 (包含前置加速与最新落地)
@@ -33,45 +34,39 @@ proxy-groups:
     type: fallback
     url: "http://www.gstatic.com/generate_204"
     interval: 30
-    proxies:
-      - 前置-1
-      - 前置-2
+    proxies: [前置-1, 前置-2]
 
   - name: "消费"
     type: select
-    proxies:
-      - 专线-土耳其01
-      - 专线-土耳其02
-      - 专线-土耳其03
-      - 专线-土耳其04
-      - 专线-土耳其05
+    proxies: [专线-土耳其01, 专线-土耳其02, 专线-土耳其03, 专线-土耳其04, 专线-土耳其05]
 
   - name: "主线路"
     type: select
-    use:
-      - 主线路
+    use: [主线路]
 
-  # Relay 链条定义 (前置 -> 落地)
+  # 中继链条 (前置 -> 落地)
   - {name: "专线-土耳其01", type: "relay", proxies: ["前置自动切换", "落地-01"]}
   - {name: "专线-土耳其02", type: "relay", proxies: ["前置自动切换", "落地-02"]}
   - {name: "专线-土耳其03", type: "relay", proxies: ["前置自动切换", "落地-03"]}
   - {name: "专线-土耳其04", type: "relay", proxies: ["前置自动切换", "落地-04"]}
   - {name: "专线-土耳其05", type: "relay", proxies: ["前置自动切换", "落地-05"]}
 
-# 4. 优化版分流规则
+# 4. 深度分流规则 (专项修复商店无网络)
 rules:
-  # --- Google 商店核心规则 (全部强制走消费组) ---
+  # --- 解决 Google 商店显示“无网络”的关键分流 ---
+  - DOMAIN,connectivitycheck.gstatic.com,消费
+  - DOMAIN,play-fe.googleapis.com,消费
+  - DOMAIN,play.google.com,消费
+  - DOMAIN,payments.google.com,消费
   - DOMAIN-SUFFIX,googleplay.com,消费
   - DOMAIN-SUFFIX,googleapis.com,消费
+  - DOMAIN-SUFFIX,googleapis.cn,消费  # 国内版 API 也强制走消费
   - DOMAIN-SUFFIX,gstatic.com,消费
   - DOMAIN-SUFFIX,ggpht.com,消费
-  - DOMAIN,play.google.com,消费
-  - DOMAIN,play-fe.googleapis.com,消费
-  - DOMAIN,payments.google.com,消费
   - DOMAIN-SUFFIX,payments-pa.googleapis.com,消费
   - DOMAIN,sspanel.net,消费
 
-  # --- 其他分流 ---
+  # --- 其他 Google 服务走主线路 ---
   - DOMAIN-SUFFIX,google.com,主线路
   - DOMAIN-KEYWORD,google,主线路
   - DOMAIN-KEYWORD,github,主线路
