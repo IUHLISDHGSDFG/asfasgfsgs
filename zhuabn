@@ -1,9 +1,11 @@
+# 强制开启 DNS 接管，解决浏览器无法解析 Google 的问题
 dns:
   enable: true
   enhanced-mode: fake-ip
   nameserver:
     - 8.8.8.8
     - 1.1.1.1
+    - 114.114.114.114
 
 port: 7890
 socks-port: 7891
@@ -15,12 +17,16 @@ external-controller: 127.0.0.1:9090
 
 # 1. 代理节点
 proxies:
+  # 高性能前置
   - {name: "前置-1", type: "ss", server: "gz.xn--1lqrb57uoq8a.com", port: 21642, cipher: "aes-128-gcm", password: "382a4468-399d-4e82-b0da-65880f250a0a", udp: true}
   - {name: "前置-2", type: "ss", server: "gz.xn--1lqrb57uoq8a.com", port: 14779, cipher: "aes-128-gcm", password: "382a4468-399d-4e82-b0da-65880f250a0a", udp: true}
   
-  - {name: "落地-01", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-al-sessTime-5", password: "KB50dS", udp: true}
-  - {name: "落地-02", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-hWVG-sessTime-5", password: "KB50dS", udp: true}
-  - {name: "落地-03", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-qr-sessTime-5", password: "KB50dS", udp: true}
+  # 土耳其落地 (去掉了可能会干扰中继的 udp: true)
+  - {name: "落地-01", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-al-sessTime-5", password: "KB50dS"}
+  - {name: "落地-02", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-hWVG-sessTime-5", password: "KB50dS"}
+  - {name: "落地-03", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-qr-sessTime-5", password: "KB50dS"}
+  - {name: "落地-04", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-na-sessTime-5", password: "KB50dS"}
+  - {name: "落地-05", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-ls-sessTime-5", password: "KB50dS"}
 
 # 2. 外部订阅
 proxy-providers:
@@ -40,32 +46,35 @@ proxy-groups:
 
   - name: "消费"
     type: select
-    proxies: [专线-土耳其01, 专线-土耳其02, 专线-土耳其03]
+    proxies: [专线-土耳其01, 专线-土耳其02, 专线-土耳其03, 专线-土耳其04, 专线-土耳其05]
 
   - name: "主线路"
     type: select
     use: [主线路]
 
+  # 中继链路
   - {name: "专线-土耳其01", type: "relay", proxies: ["前置自动切换", "落地-01"]}
   - {name: "专线-土耳其02", type: "relay", proxies: ["前置自动切换", "落地-02"]}
   - {name: "专线-土耳其03", type: "relay", proxies: ["前置自动切换", "落地-03"]}
+  - {name: "专线-土耳其04", type: "relay", proxies: ["前置自动切换", "落地-04"]}
+  - {name: "专线-土耳其05", type: "relay", proxies: ["前置自动切换", "落地-05"]}
 
-# 4. 强制规则
+# 4. 全能分流规则
 rules:
-  # 屏蔽 QUIC 协议，防止商店走 UDP 导致无网报错
-  - AND,((DEST-PORT,443),(PROTOCOL,UDP)),REJECT
-  
-  # Google 商店核心分流
-  - DOMAIN,connectivitycheck.gstatic.com,消费
-  - DOMAIN,play-fe.googleapis.com,消费
-  - DOMAIN,play.google.com,消费
-  - DOMAIN,payments.google.com,消费
+  # 拦截 QUIC 流量，强制浏览器走 TCP
+  - DST-PORT,443,REJECT,no-resolve
+
+  # 强制 Google 所有域名走“消费”组（确保浏览器登录和商店同步通畅）
+  - DOMAIN-KEYWORD,google,消费
+  - DOMAIN-SUFFIX,google.com,消费
+  - DOMAIN-SUFFIX,google.com.tr,消费
   - DOMAIN-SUFFIX,googleplay.com,消费
   - DOMAIN-SUFFIX,googleapis.com,消费
   - DOMAIN-SUFFIX,gstatic.com,消费
   - DOMAIN-SUFFIX,ggpht.com,消费
-  - DOMAIN-SUFFIX,payments-pa.googleapis.com,消费
 
-  - DOMAIN-SUFFIX,google.com,主线路
+  # 其他分流
+  - DOMAIN-KEYWORD,github,主线路
+  - DOMAIN-KEYWORD,youtube,主线路
   - GEOIP,CN,DIRECT
   - MATCH,主线路
