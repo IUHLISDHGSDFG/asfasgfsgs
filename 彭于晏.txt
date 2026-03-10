@@ -5,10 +5,10 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-  - {name: "专线-Frontend",type:"vmess","server":"ys60vaxj.cdn.node.a.corelink8.net","port":20695,"uuid":"bd17488c-ebf4-3cdd-8dc0-2ff08eb33c9f","alterId":0,"cipher":"auto","udp":true,"tags":"hk","network":"ws","ws-opts":{"path":"/acaaaad0-54f5-4e10-94bb-1e6ab04649e1.y.live02.m3u8"},"skip-cert-verify":false}
-  - {name: "专线-Frontend-1",type:"vmess","server":"yyrfjuah.cdn.node.a.corelink8.net","port":20674,"uuid":"bd17488c-ebf4-3cdd-8dc0-2ff08eb33c9f","alterId":0,"cipher":"auto","udp":true,"tags":"jp","network":"ws","ws-opts":{"path":"/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"},"skip-cert-verify":false}
-  - {name: "专线-Frontend-2",type:"vmess","server":"yyrbjp.cdn.node.a.corelink8.net","port":20672,"uuid":"bd17488c-ebf4-3cdd-8dc0-2ff08eb33c9f","alterId":0,"cipher":"auto","udp":true,"tags":"jp","network":"ws","ws-opts":{"path":"/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"},"skip-cert-verify":false}
-  - {name: "专线-Frontend-3",type:"vmess","server":"yyrfjuah.cdn.node.a.corelink8.net","port":20673,"uuid":"bd17488c-ebf4-3cdd-8dc0-2ff08eb33c9f","alterId":0,"cipher":"auto","udp":true,"tags":"jp","network":"ws","ws-opts":{"path":"/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"},"skip-cert-verify":false}
+  - {name: "专线-Frontend", type: "vmess", "server": "ys60vaxj.cdn.node.a.corelink8.net", "port": 20695, "uuid": "bd17488c-ebf4-3cdd-8dc0-2ff08eb33c9f", "alterId": 0, "cipher": "auto", "udp": true, "tags": "hk", "network": "ws", "ws-opts": {"path": "/acaaaad0-54f5-4e10-94bb-1e6ab04649e1.y.live02.m3u8"}, "skip-cert-verify": false}
+  - {name: "专线-Frontend-1", type: "vmess", "server": "yyrfjuah.cdn.node.a.corelink8.net", "port": 20674, "uuid": "bd17488c-ebf4-3cdd-8dc0-2ff08eb33c9f", "alterId": 0, "cipher": "auto", "udp": true, "tags": "jp", "network": "ws", "ws-opts": {"path": "/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"}, "skip-cert-verify": false}
+  - {name: "专线-Frontend-2", type: "vmess", "server": "yyrbjp.cdn.node.a.corelink8.net", "port": 20672, "uuid": "bd17488c-ebf4-3cdd-8dc0-2ff08eb33c9f", "alterId": 0, "cipher": "auto", "udp": true, "tags": "jp", "network": "ws", "ws-opts": {"path": "/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"}, "skip-cert-verify": false}
+  - {name: "专线-Frontend-3", type: "vmess", "server": "yyrfjuah.cdn.node.a.corelink8.net", "port": 20673, "uuid": "bd17488c-ebf4-3cdd-8dc0-2ff08eb33c9f", "alterId": 0, "cipher": "auto", "udp": true, "tags": "jp", "network": "ws", "ws-opts": {"path": "/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"}, "skip-cert-verify": false}
   - {name: "土耳其01", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-N9q-sessTime-5", password: "KB50dS", udp: true}
   - {name: "土耳其02", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-N9q-sessTime-5", password: "KB50dS", udp: true}
   - {name: "土耳其03", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-N9q-sessTime-5", password: "KB50dS", udp: true}
@@ -17,6 +17,7 @@ proxies:
   - {name: "土耳其06", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-N9q-sessTime-5", password: "KB50dS", udp: true}
   - {name: "土耳其07", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-N9q-sessTime-5", password: "KB50dS", udp: true}
   - {name: "土耳其08", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-N9q-sessTime-5", password: "KB50dS", udp: true}
+
 proxy-providers:
   主线路: {type: "http", url: "https://s.youyun666.site/link/0RHTFWqnOFZ68SlY?clash=1", interval: 86400, path: "./proxy_provider/jc.yaml", udp: false, health-check: {enable: true, interval: 600, url: "http://www.gstatic.com/generate_204"}}
 
@@ -32,7 +33,6 @@ proxy-groups:
   - {name: "专线-土耳其06", type: "relay", proxies: ["自动切换", "土耳其06"]}
   - {name: "专线-土耳其07", type: "relay", proxies: ["自动切换", "土耳其07"]}
   - {name: "专线-土耳其08", type: "relay", proxies: ["自动切换", "土耳其08"]}
-
 
 rules:
   - DOMAIN,payments.google.com,消费
@@ -88,4 +88,3 @@ rules:
   - DOMAIN-SUFFIX,ytoo.co.uk,主线路
   - GEOIP,CN,DIRECT
   - MATCH,主线路
-
