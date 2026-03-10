@@ -3,30 +3,29 @@ socks-port: 7891
 allow-lan: true
 mode: Rule
 log-level: info
-ipv6: false  # 强制关闭 IPv6，防止分流失效导致商店无网络
+ipv6: false
 external-controller: 127.0.0.1:9090
 
-# 1. 代理节点 (包含前置加速与最新落地)
+# 1. 代理节点
 proxies:
-  # 高性能前置 (用于中继加速)
+  # 高性能前置
   - {name: "前置-1", type: "ss", server: "gz.xn--1lqrb57uoq8a.com", port: 21642, cipher: "aes-128-gcm", password: "382a4468-399d-4e82-b0da-65880f250a0a", udp: true}
   - {name: "前置-2", type: "ss", server: "gz.xn--1lqrb57uoq8a.com", port: 14779, cipher: "aes-128-gcm", password: "382a4468-399d-4e82-b0da-65880f250a0a", udp: true}
   
-  # 最新替换的 5 条土耳其落地节点 (Socks5)
+  # 最新土耳其落地
   - {name: "落地-01", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-al-sessTime-5", password: "KB50dS", udp: true}
   - {name: "落地-02", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-hWVG-sessTime-5", password: "KB50dS", udp: true}
   - {name: "落地-03", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-qr-sessTime-5", password: "KB50dS", udp: true}
   - {name: "落地-04", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-na-sessTime-5", password: "KB50dS", udp: true}
   - {name: "落地-05", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-ls-sessTime-5", password: "KB50dS", udp: true}
 
-# 2. 外部订阅提供者
+# 2. 外部订阅
 proxy-providers:
   主线路:
     type: http
     url: "https://s.youyun666.site/link/0RHTFWqnOFZ68SlY?clash=1"
     interval: 86400
     path: "./proxy_provider/main_sub.yaml"
-    health-check: {enable: true, interval: 600, url: "http://www.gstatic.com/generate_204"}
 
 # 3. 策略组
 proxy-groups:
@@ -44,34 +43,29 @@ proxy-groups:
     type: select
     use: [主线路]
 
-  # 中继链条 (前置 -> 落地)
+  # 中继链路
   - {name: "专线-土耳其01", type: "relay", proxies: ["前置自动切换", "落地-01"]}
   - {name: "专线-土耳其02", type: "relay", proxies: ["前置自动切换", "落地-02"]}
   - {name: "专线-土耳其03", type: "relay", proxies: ["前置自动切换", "落地-03"]}
   - {name: "专线-土耳其04", type: "relay", proxies: ["前置自动切换", "落地-04"]}
   - {name: "专线-土耳其05", type: "relay", proxies: ["前置自动切换", "落地-05"]}
 
-# 4. 深度分流规则 (专项修复商店无网络)
+# 4. 兼容版规则
 rules:
-  # --- 解决 Google 商店显示“无网络”的关键分流 ---
+  # 解决之前的报错：使用更通用的规则屏蔽 QUIC (UDP 443)
+  - DST-PORT,443,REJECT,no-resolve
+
+  # Google 商店全解析规则
   - DOMAIN,connectivitycheck.gstatic.com,消费
   - DOMAIN,play-fe.googleapis.com,消费
   - DOMAIN,play.google.com,消费
   - DOMAIN,payments.google.com,消费
   - DOMAIN-SUFFIX,googleplay.com,消费
   - DOMAIN-SUFFIX,googleapis.com,消费
-  - DOMAIN-SUFFIX,googleapis.cn,消费  # 国内版 API 也强制走消费
   - DOMAIN-SUFFIX,gstatic.com,消费
   - DOMAIN-SUFFIX,ggpht.com,消费
   - DOMAIN-SUFFIX,payments-pa.googleapis.com,消费
-  - DOMAIN,sspanel.net,消费
 
-  # --- 其他 Google 服务走主线路 ---
   - DOMAIN-SUFFIX,google.com,主线路
-  - DOMAIN-KEYWORD,google,主线路
-  - DOMAIN-KEYWORD,github,主线路
-  - DOMAIN-KEYWORD,youtube,主线路
-  
-  - DOMAIN-SUFFIX,apple.com,DIRECT
   - GEOIP,CN,DIRECT
   - MATCH,主线路
