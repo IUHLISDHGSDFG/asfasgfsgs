@@ -1,50 +1,90 @@
-# 开启 DNS 接管，防止本地 DNS 污染
-dns:
-  enable: true
-  enhanced-mode: fake-ip
-  nameserver:
-    - 8.8.8.8
-    - 1.1.1.1
-
 port: 7890
 socks-port: 7891
 allow-lan: true
 mode: Rule
 log-level: info
-ipv6: false
-
-# 代理节点
+external-controller: 127.0.0.1:9090
 proxies:
-  # 两个前置节点 (如果这两个也刷不出延迟，说明你主线路挂了)
-  - {name: "前置-1", type: "ss", server: "gz.xn--1lqrb57uoq8a.com", port: 21642, cipher: "aes-128-gcm", password: "382a4468-399d-4e82-b0da-65880f250a0a", udp: true}
-  - {name: "前置-2", type: "ss", server: "gz.xn--1lqrb57uoq8a.com", port: 14779, cipher: "aes-128-gcm", password: "382a4468-399d-4e82-b0da-65880f250a0a", udp: true}
-  
-  # 最新土耳其落地 (Socks5)
-  - {name: "落地-01", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-al-sessTime-5", password: "KB50dS", udp: true}
-  - {name: "落地-02", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-hWVG-sessTime-5", password: "KB50dS", udp: true}
-  - {name: "落地-03", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-qr-sessTime-5", password: "KB50dS", udp: true}
+  - {name: "专线-Frontend", type:"ssr","server":"yyhkss1.cdn.node.a.corelink8.net","port":20380,"cipher":"chacha20-ietf","password":"JXpZpq","protocol":"auth_aes128_md5","protocol-param":"418789:BSA9INaS8BV","obfs":"tls1.2_ticket_auth","obfs-param":"18dc6418789.cloudfront.com,cloudflare.com,itunes.apple.com,www.icloud.com,ajax.microsoft.com,apps.bdimg.com,www.bing.com","udp":true,"tags":"hk"}
+  - {name: "专线-Frontend-1", type:"ssr","server":"f15q.cdn.node.a.corelink8.net","port":20422,"cipher":"chacha20-ietf","password":"JXpZpq","protocol":"auth_aes128_md5","protocol-param":"418789:BSA9INaS8BV","obfs":"tls1.2_ticket_auth","obfs-param":"18dc6418789.cloudfront.com,cloudflare.com,itunes.apple.com,www.icloud.com,ajax.microsoft.com,apps.bdimg.com,www.bing.com","udp":true,"tags":"hk"}
+  - {name: "专线-Frontend-2", type:"vmess","server":"yyrbjp.cdn.node.a.corelink8.net","port":20672,"uuid":"bd17488c-ebf4-3cdd-8dc0-2ff08eb33c9f","alterId":0,"cipher":"auto","udp":true,"tags":"jp","network":"ws","ws-opts":{"path":"/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"},"skip-cert-verify":false}
+  - {name: "专线-Frontend-3", type:"vmess","server":"yyrfjuah.cdn.node.a.corelink8.net","port":20673,"uuid":"bd17488c-ebf4-3cdd-8dc0-2ff08eb33c9f","alterId":0,"cipher":"auto","udp":true,"tags":"jp","network":"ws","ws-opts":{"path":"/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"},"skip-cert-verify":false}
+  - {name: "土耳其01", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-N9q-sessTime-5", password: "KB50dS", udp: true}
+  - {name: "土耳其02", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-N9q-sessTime-5", password: "KB50dS", udp: true}
+  - {name: "土耳其03", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-N9q-sessTime-5", password: "KB50dS", udp: true}
+  - {name: "土耳其04", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-N9q-sessTime-5", password: "KB50dS", udp: true}
+  - {name: "土耳其05", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-N9q-sessTime-5", password: "KB50dS", udp: true}
+  - {name: "土耳其06", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-N9q-sessTime-5", password: "KB50dS", udp: true}
+  - {name: "土耳其07", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-N9q-sessTime-5", password: "KB50dS", udp: true}
+  - {name: "土耳其08", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-N9q-sessTime-5", password: "KB50dS", udp: true}
+proxy-providers:
+  主线路: {type: "http", url: "https://s.youyun666.site/link/0RHTFWqnOFZ68SlY?clash=1", interval: 86400, path: "./proxy_provider/jc.yaml", udp: false, health-check: {enable: true, interval: 600, url: "http://www.gstatic.com/generate_204"}}
 
-# 策略组
 proxy-groups:
-  - name: "消费"
-    type: select
-    proxies: ["专线-土耳其01", "专线-土耳其02", "专线-土耳其03"]
+  - {name: "主线路", type: "select", use: ["主线路"], health-check: {enable: true, interval: 60, url: "http://www.gstatic.com/generate_204"}}
+  - {name: "消费", type: "select", proxies: ["专线-土耳其01", "专线-土耳其02", "专线-土耳其03", "专线-土耳其04", "专线-土耳其05", "专线-土耳其06", "专线-土耳其07", "专线-土耳其08"]}
+  - {name: "自动切换", type: "fallback", url: "http://www.gstatic.com/generate_204", interval: 30, proxies: ["专线-Frontend", "专线-Frontend-2", "专线-Frontend-3", "专线-Frontend-1"]}
+  - {name: "专线-土耳其01", type: "relay", proxies: ["自动切换", "土耳其01"]}
+  - {name: "专线-土耳其02", type: "relay", proxies: ["自动切换", "土耳其02"]}
+  - {name: "专线-土耳其03", type: "relay", proxies: ["自动切换", "土耳其03"]}
+  - {name: "专线-土耳其04", type: "relay", proxies: ["自动切换", "土耳其04"]}
+  - {name: "专线-土耳其05", type: "relay", proxies: ["自动切换", "土耳其05"]}
+  - {name: "专线-土耳其06", type: "relay", proxies: ["自动切换", "土耳其06"]}
+  - {name: "专线-土耳其07", type: "relay", proxies: ["自动切换", "土耳其07"]}
+  - {name: "专线-土耳其08", type: "relay", proxies: ["自动切换", "土耳其08"]}
 
-  - name: "主线路"
-    type: select
-    proxies: ["前置-1", "前置-2", "DIRECT"]
 
-  # 中继链路：流量 -> 前置节点 -> 土耳其落地
-  - {name: "专线-土耳其01", type: "relay", proxies: ["前置-1", "落地-01"]}
-  - {name: "专线-土耳其02", type: "relay", proxies: ["前置-1", "落地-02"]}
-  - {name: "专线-土耳其03", type: "relay", proxies: ["前置-1", "落地-03"]}
-
-# 规则
 rules:
-  - DST-PORT,443,REJECT,no-resolve
-  - DOMAIN-KEYWORD,google,消费
-  - DOMAIN-SUFFIX,google.com,消费
-  - DOMAIN-SUFFIX,google.com.tr,消费
-  - DOMAIN-SUFFIX,gstatic.com,消费
+  - DOMAIN,payments.google.com,消费
+  - DOMAIN-SUFFIX,payments-pa.googleapis.com,消费
+  - DOMAIN,play-fe.googleapis.com,消费
+  - DOMAIN,myaccount.google.com,主线路
+  - DOMAIN-KEYWORD,accounts.google.com,主线路
+  - DOMAIN,sspanel.net,消费
+  - DOMAIN-SUFFIX,google.com,主线路
+  - DOMAIN-SUFFIX,googleapis.com,主线路
+  - DOMAIN-SUFFIX,gstatic.com,主线路
+  - DOMAIN-SUFFIX,ggpht.com,主线路
+  - DOMAIN-SUFFIX,gvt1.com,消费
+  - DOMAIN-SUFFIX,android.com,主线路
+  - DOMAIN-KEYWORD,google,主线路
+  - DOMAIN-KEYWORD,gmail,主线路
+  - DOMAIN-KEYWORD,youtube,主线路
+  - DOMAIN-SUFFIX,ipapi.co,主线路
+  - DOMAIN-SUFFIX,ip-api.com,主线路
+  - DOMAIN-SUFFIX,api.ip.sb,主线路
+  - DOMAIN-SUFFIX,IPInfo.io,主线路
+  - DOMAIN-SUFFIX,ipip.net,主线路
+  - DOMAIN-SUFFIX,skk.moe,主线路
+  - DOMAIN-KEYWORD,game,主线路
+  - DOMAIN-KEYWORD,googlevideo.com,主线路
+  - DOMAIN-SUFFIX,1password.com,DIRECT
+  - DOMAIN-SUFFIX,vultr.com,DIRECT
+  - DOMAIN-SUFFIX,mb3admin.com,DIRECT
+  - DOMAIN-SUFFIX,rixcloud.io,DIRECT
+  - DOMAIN-SUFFIX,tempestapp.io,DIRECT
+  - DOMAIN-SUFFIX,baidu.com,DIRECT
+  - DOMAIN-SUFFIX,baidu-int.com,DIRECT
+  - DOMAIN-SUFFIX,erebor.douban.com,DIRECT
+  - DOMAIN,mtalk.google.com,DIRECT
+  - DOMAIN,alt1-mtalk.google.com,DIRECT
+  - DOMAIN,alt2-mtalk.google.com,DIRECT
+  - DOMAIN,alt3-mtalk.google.com,DIRECT
+  - DOMAIN,alt4-mtalk.google.com,DIRECT
+  - DOMAIN,alt5-mtalk.google.com,DIRECT
+  - DOMAIN,alt6-mtalk.google.com,DIRECT
+  - DOMAIN,alt7-mtalk.google.com,DIRECT
+  - DOMAIN,alt8-mtalk.google.com,DIRECT
+  - DOMAIN,alt9-mtalk.google.com,DIRECT
+  - DOMAIN,captive.apple.com,DIRECT
+  - DOMAIN,time-ios.apple.com,DIRECT
+  - DOMAIN-SUFFIX,gateway.push-apple.com.akadns.net,DIRECT
+  - DOMAIN-SUFFIX,push.apple.com,DIRECT
+  - DOMAIN-KEYWORD,github,主线路
+  - DOMAIN-SUFFIX,github.com,主线路
+  - DOMAIN-SUFFIX,flowercloud.net,主线路
+  - DOMAIN-SUFFIX,socloud.me,主线路
+  - DOMAIN-SUFFIX,ytoo.asia,主线路
+  - DOMAIN-SUFFIX,ytoo.co.uk,主线路
   - GEOIP,CN,DIRECT
   - MATCH,主线路
