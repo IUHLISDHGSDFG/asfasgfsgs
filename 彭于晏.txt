@@ -1,3 +1,6 @@
+# ==========================================
+# CLASH 优化配置文件 - 集成动态 API 与中继逻辑
+# ==========================================
 port: 7890
 socks-port: 7891
 allow-lan: true
@@ -5,9 +8,8 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 
-# 1. 代理提供者：这里处理你的两个自动更新源
+# 1. 代理提供者 (自动更新源)
 proxy-providers:
-  # 你的主订阅链接 (优云)
   主线路:
     type: http
     url: "https://s.youyun666.site/link/0RHTFWqnOFZ68SlY?clash=1"
@@ -18,40 +20,48 @@ proxy-providers:
       interval: 600
       url: "http://www.gstatic.com/generate_204"
 
-  # 你的土耳其动态 IP 源 (API 转换)
-  # 注意：Clash 无法直接解析 API 返回的纯文本，建议配合转换器使用
+  # 这里的 API 链接会自动获取最新的土耳其 IP
   土耳其动态源:
     type: http
     url: "http://usapi.udealproxy.com:7777/iplist?custom=3711&password=KB50dS&num=5&re_type=1&lb=1&region=tr&st=adana&city=adana"
-    interval: 300 # 每 5 分钟尝试更新一次 IP
-    path: "./proxy_provider/tr_dynamic.yaml"
+    interval: 300 # 每 5 分钟尝试刷新 IP
+    path: "./proxy_provider/tr_api.yaml"
     health-check:
       enable: true
       interval: 60
       url: "http://www.gstatic.com/generate_204"
 
-# 2. 静态前置节点 (保留原有 SS 节点) [cite: 4]
+# 2. 静态前置节点 (保留你原有的高性能 SS 节点) [cite: 4]
 proxies:
-  - {name: "专线-Frontend", type: "ss", server: "gz.xn--1lqrb57uoq8a.com", port: 21642, cipher: "aes-128-gcm", password: "382a4468-399d-4e82-b0da-65880f250a0a", udp: true}
-  - {name: "专线-Frontend-1", type: "ss", server: "gz.xn--1lqrb57uoq8a.com", port: 14779, cipher: "aes-128-gcm", password: "382a4468-399d-4e82-b0da-65880f250a0a", udp: true}
+  - [cite_start]{name: "前置-1", type: "ss", server: "gz.xn--1lqrb57uoq8a.com", port: 21642, cipher: "aes-128-gcm", password: "382a4468-399d-4e82-b0da-65880f250a0a", udp: true} [cite: 4]
+  - [cite_start]{name: "前置-2", type: "ss", server: "gz.xn--1lqrb57uoq8a.com", port: 14779, cipher: "aes-128-gcm", password: "382a4468-399d-4e82-b0da-65880f250a0a", udp: true} [cite: 4]
+  - [cite_start]{name: "前置-3", type: "ss", server: "gz.xn--1lqrb57uoq8a.com", port: 11999, cipher: "aes-128-gcm", password: "382a4468-399d-4e82-b0da-65880f250a0a", udp: true} [cite: 4]
 
-# 3. 策略组
+# 3. 策略组优化
 proxy-groups:
-  - [cite_start]{name: "主线路", type: "select", use: ["主线路"]} # 使用优云订阅 [cite: 11]
+  # 自动选择最快的前置节点 [cite: 12]
+  - [cite_start]{name: "前置自动切换", type: "fallback", url: "http://www.gstatic.com/generate_204", interval: 30, proxies: ["前置-1", "前置-2", "前置-3"]} [cite: 12]
 
-  - [cite_start]{name: "自动切换", type: "fallback", url: "http://www.gstatic.com/generate_204", interval: 30, proxies: ["专线-Frontend", "专线-Frontend-1"]} [cite: 12]
+  # 日常上网使用新订阅链接 [cite: 11]
+  - [cite_start]{name: "主线路", type: "select", use: ["主线路"]} [cite: 11]
 
-  - {name: "消费", type: "select", use: ["土耳其动态源"]} # 自动关联 API 提取的 IP
+  # 消费专线：使用中继模式，前置加速 + 动态落地 [cite: 13]
+  - [cite_start]{name: "消费", type: "relay", proxies: ["前置自动切换", "土耳其动态源"]} [cite: 13]
 
-  # 中继逻辑：如果你需要 API 提取的 IP 也走中继，结构如下：
-  - [cite_start]{name: "专线-土耳其-动态", type: "relay", proxies: ["自动切换", "消费"]} [cite: 12, 13]
-
-# 4. 分流规则 [cite: 15, 16]
+# 4. 自动化分流规则 [cite: 15, 16]
 rules:
-  - DOMAIN,payments.google.com,消费
-  - DOMAIN-SUFFIX,payments-pa.googleapis.com,消费
-  - DOMAIN,play-fe.googleapis.com,消费
-  - DOMAIN-SUFFIX,google.com,主线路
-  - GEOIP,CN,DIRECT
-  - MATCH,主线路
+  # 支付与 Google 商店强制走土耳其专线 [cite: 15]
+  - [cite_start]DOMAIN,payments.google.com,消费 [cite: 15]
+  - [cite_start]DOMAIN-SUFFIX,payments-pa.googleapis.com,消费 [cite: 15]
+  - [cite_start]DOMAIN,play-fe.googleapis.com,消费 [cite: 15]
+  - [cite_start]DOMAIN,sspanel.net,消费 [cite: 15]
+  
+  # 常用服务走主线路 [cite: 16, 17]
+  - [cite_start]DOMAIN-SUFFIX,google.com,主线路 [cite: 16]
+  - [cite_start]DOMAIN-KEYWORD,github,主线路 [cite: 17]
+  - [cite_start]DOMAIN-KEYWORD,youtube,主线路 [cite: 16]
+  
+  # 国内流量直连 [cite: 17]
+  - [cite_start]GEOIP,CN,DIRECT [cite: 17]
+  - [cite_start]MATCH,主线路 [cite: 17]
 
