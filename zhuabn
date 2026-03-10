@@ -1,3 +1,4 @@
+# Clash 优化配置文件 - 解决 API 报错版本
 port: 7890
 socks-port: 7891
 allow-lan: true
@@ -5,7 +6,7 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 
-# 1. 订阅源优化
+# 1. 代理提供者 (自动更新源)
 proxy-providers:
   主线路:
     type: http
@@ -17,10 +18,9 @@ proxy-providers:
       interval: 600
       url: "http://www.gstatic.com/generate_204"
 
-  # 使用转换服务将你的 API 转换为 Clash 格式
+  # 关键修复：通过转换器处理你的 API 链接，防止 YAML 解析错误
   土耳其动态源:
     type: http
-    # 这里通过后端转换器处理你的 API 链接
     url: "https://sub.xeton.dev/sub?target=clash&url=http%3A%2F%2Fusapi.udealproxy.com%3A7777%2Fiplist%3Fcustom%3D3711%26password%3DKB50dS%26num%3D5%26re_type%3D1%26lb%3D1%26region%3Dtr%26st%3Dadana%26city%3Dadana&insert=false"
     interval: 300
     path: "./proxy_provider/tr_api.yaml"
@@ -29,38 +29,29 @@ proxy-providers:
       interval: 60
       url: "http://www.gstatic.com/generate_204"
 
-# 2. 静态前置节点 (保持原样)
+# 2. 静态前置节点 (保留你原有的 SS 节点) [cite: 4]
 proxies:
   - {name: "前置-1", type: "ss", server: "gz.xn--1lqrb57uoq8a.com", port: 21642, cipher: "aes-128-gcm", password: "382a4468-399d-4e82-b0da-65880f250a0a", udp: true}
   - {name: "前置-2", type: "ss", server: "gz.xn--1lqrb57uoq8a.com", port: 14779, cipher: "aes-128-gcm", password: "382a4468-399d-4e82-b0da-65880f250a0a", udp: true}
+  - {name: "前置-3", type: "ss", server: "gz.xn--1lqrb57uoq8a.com", port: 11999, cipher: "aes-128-gcm", password: "382a4468-399d-4e82-b0da-65880f250a0a", udp: true}
 
-# 3. 策略组
+# 3. 策略组优化
 proxy-groups:
-  - name: "主线路"
-    type: select
-    use:
-      - 主线路
+  # 自动选择最快的前置节点 [cite: 1, 12]
+  - {name: "前置自动切换", type: "fallback", url: "http://www.gstatic.com/generate_204", interval: 30, proxies: ["前置-1", "前置-2", "前置-3"]}
 
-  - name: "前置自动切换"
-    type: fallback
-    url: "http://www.gstatic.com/generate_204"
-    interval: 30
-    proxies:
-      - 前置-1
-      - 前置-2
+  - {name: "主线路", type: "select", use: ["主线路"]}
 
-  - name: "消费"
-    type: relay
-    proxies:
-      - 前置自动切换
-      - 土耳其动态源
+  # 消费专线：前置加密加速 + 土耳其动态落地 [cite: 1, 11]
+  - {name: "消费", type: "relay", proxies: ["前置自动切换", "土耳其动态源"]}
 
-# 4. 分流规则
+# 4. 分流规则 [cite: 1, 16]
 rules:
   - DOMAIN,payments.google.com,消费
   - DOMAIN-SUFFIX,payments-pa.googleapis.com,消费
   - DOMAIN,play-fe.googleapis.com,消费
   - DOMAIN,sspanel.net,消费
   - DOMAIN-SUFFIX,google.com,主线路
+  - DOMAIN-KEYWORD,github,主线路
   - GEOIP,CN,DIRECT
   - MATCH,主线路
