@@ -1,3 +1,11 @@
+# 1. DNS 增强配置（解决浏览器无法解析 Google 的问题）
+dns:
+  enable: true
+  enhanced-mode: fake-ip
+  nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+
 port: 7890
 socks-port: 7891
 allow-lan: true
@@ -6,26 +14,18 @@ log-level: info
 ipv6: false
 external-controller: 127.0.0.1:9090
 
-# 1. 代理节点
+# 2. 代理节点
 proxies:
-  # 高性能前置
+  # 高性能前置 (用于给土耳其节点提速)
   - {name: "前置-1", type: "ss", server: "gz.xn--1lqrb57uoq8a.com", port: 21642, cipher: "aes-128-gcm", password: "382a4468-399d-4e82-b0da-65880f250a0a", udp: true}
   - {name: "前置-2", type: "ss", server: "gz.xn--1lqrb57uoq8a.com", port: 14779, cipher: "aes-128-gcm", password: "382a4468-399d-4e82-b0da-65880f250a0a", udp: true}
   
-  # 最新土耳其落地
+  # 最新替换的 5 条土耳其落地 (Socks5)
   - {name: "落地-01", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-al-sessTime-5", password: "KB50dS", udp: true}
   - {name: "落地-02", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-hWVG-sessTime-5", password: "KB50dS", udp: true}
   - {name: "落地-03", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-qr-sessTime-5", password: "KB50dS", udp: true}
   - {name: "落地-04", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-na-sessTime-5", password: "KB50dS", udp: true}
   - {name: "落地-05", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-ls-sessTime-5", password: "KB50dS", udp: true}
-
-# 2. 外部订阅
-proxy-providers:
-  主线路:
-    type: http
-    url: "https://s.youyun666.site/link/0RHTFWqnOFZ68SlY?clash=1"
-    interval: 86400
-    path: "./proxy_provider/main_sub.yaml"
 
 # 3. 策略组
 proxy-groups:
@@ -41,31 +41,30 @@ proxy-groups:
 
   - name: "主线路"
     type: select
-    use: [主线路]
+    proxies: [前置自动切换, DIRECT]
 
-  # 中继链路
+  # 中继链路定义 (Relay: 前置 -> 落地)
   - {name: "专线-土耳其01", type: "relay", proxies: ["前置自动切换", "落地-01"]}
   - {name: "专线-土耳其02", type: "relay", proxies: ["前置自动切换", "落地-02"]}
   - {name: "专线-土耳其03", type: "relay", proxies: ["前置自动切换", "落地-03"]}
   - {name: "专线-土耳其04", type: "relay", proxies: ["前置自动切换", "落地-04"]}
   - {name: "专线-土耳其05", type: "relay", proxies: ["前置自动切换", "落地-05"]}
 
-# 4. 兼容版规则
+# 4. 修复后的分流规则
 rules:
-  # 解决之前的报错：使用更通用的规则屏蔽 QUIC (UDP 443)
+  # 拦截 QUIC (UDP 443)，解决浏览器/商店“无网络”报错的关键
   - DST-PORT,443,REJECT,no-resolve
 
-  # Google 商店全解析规则
-  - DOMAIN,connectivitycheck.gstatic.com,消费
-  - DOMAIN,play-fe.googleapis.com,消费
-  - DOMAIN,play.google.com,消费
-  - DOMAIN,payments.google.com,消费
+  # 强制 Google 核心服务走土耳其“消费”组
+  - DOMAIN-KEYWORD,google,消费
   - DOMAIN-SUFFIX,googleplay.com,消费
   - DOMAIN-SUFFIX,googleapis.com,消费
   - DOMAIN-SUFFIX,gstatic.com,消费
   - DOMAIN-SUFFIX,ggpht.com,消费
-  - DOMAIN-SUFFIX,payments-pa.googleapis.com,消费
+  - DOMAIN,play.google.com,消费
+  - DOMAIN,play-fe.googleapis.com,消费
+  - DOMAIN,payments.google.com,消费
 
-  - DOMAIN-SUFFIX,google.com,主线路
+  # 国内流量直连
   - GEOIP,CN,DIRECT
   - MATCH,主线路
