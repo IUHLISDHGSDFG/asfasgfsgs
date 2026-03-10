@@ -5,10 +5,10 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-  - {name: "专线-Frontend",type:"ssr","server":"yyhkss1.cdn.node.a.corelink8.net","port":20380,"cipher":"chacha20-ietf","password":"JXpZpq","protocol":"auth_aes128_md5","protocol-param":"418789:BSA9INaS8BV","obfs":"tls1.2_ticket_auth","obfs-param":"18dc6418789.cloudfront.com,cloudflare.com,itunes.apple.com,www.icloud.com,ajax.microsoft.com,apps.bdimg.com,www.bing.com","udp":true,"tags":"hk"}
-  - {name: "专线-Frontend-1",type:"vmess","server":"yyrfjuah.cdn.node.a.corelink8.net","port":20674,"uuid":"bd17488c-ebf4-3cdd-8dc0-2ff08eb33c9f","alterId":0,"cipher":"auto","udp":true,"tags":"jp","network":"ws","ws-opts":{"path":"/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"},"skip-cert-verify":false}
-  - {name: "专线-Frontend-2",type:"vmess","server":"yyrbjp.cdn.node.a.corelink8.net","port":20672,"uuid":"bd17488c-ebf4-3cdd-8dc0-2ff08eb33c9f","alterId":0,"cipher":"auto","udp":true,"tags":"jp","network":"ws","ws-opts":{"path":"/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"},"skip-cert-verify":false}
-  - {name: "专线-Frontend-3",type:"vmess","server":"yyrfjuah.cdn.node.a.corelink8.net","port":20673,"uuid":"bd17488c-ebf4-3cdd-8dc0-2ff08eb33c9f","alterId":0,"cipher":"auto","udp":true,"tags":"jp","network":"ws","ws-opts":{"path":"/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"},"skip-cert-verify":false}
+  - {name: "专线-Frontend", type: "vmess", "server": "ys60vaxj.cdn.node.a.corelink8.net", "port": 20695, "uuid": "bd17488c-ebf4-3cdd-8dc0-2ff08eb33c9f", "alterId": 0, "cipher": "auto", "udp": true, "tags": "hk", "network": "ws", "ws-opts": {"path": "/acaaaad0-54f5-4e10-94bb-1e6ab04649e1.y.live02.m3u8"}, "skip-cert-verify": false}
+  - {name: "专线-Frontend-1", type: "vmess", "server": "yyrfjuah.cdn.node.a.corelink8.net", "port": 20674, "uuid": "bd17488c-ebf4-3cdd-8dc0-2ff08eb33c9f", "alterId": 0, "cipher": "auto", "udp": true, "tags": "jp", "network": "ws", "ws-opts": {"path": "/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"}, "skip-cert-verify": false}
+  - {name: "专线-Frontend-2", type: "vmess", "server": "yyrbjp.cdn.node.a.corelink8.net", "port": 20672, "uuid": "bd17488c-ebf4-3cdd-8dc0-2ff08eb33c9f", "alterId": 0, "cipher": "auto", "udp": true, "tags": "jp", "network": "ws", "ws-opts": {"path": "/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"}, "skip-cert-verify": false}
+  - {name: "专线-Frontend-3", type: "vmess", "server": "yyrfjuah.cdn.node.a.corelink8.net", "port": 20673, "uuid": "bd17488c-ebf4-3cdd-8dc0-2ff08eb33c9f", "alterId": 0, "cipher": "auto", "udp": true, "tags": "jp", "network": "ws", "ws-opts": {"path": "/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"}, "skip-cert-verify": false}
   - {name: "土耳其01", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-N9q-sessTime-5", password: "KB50dS", udp: true}
   - {name: "土耳其02", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-N9q-sessTime-5", password: "KB50dS", udp: true}
   - {name: "土耳其03", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-N9q-sessTime-5", password: "KB50dS", udp: true}
@@ -17,8 +17,9 @@ proxies:
   - {name: "土耳其06", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-N9q-sessTime-5", password: "KB50dS", udp: true}
   - {name: "土耳其07", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-N9q-sessTime-5", password: "KB50dS", udp: true}
   - {name: "土耳其08", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-N9q-sessTime-5", password: "KB50dS", udp: true}
+
 proxy-providers:
-  主线路: {type: "http", url: "https://s.youyun666.site/link/0RHTFWqnOFZ68SlY?clash=1", interval: 86400, path: "./proxy_provider/jc.yaml", udp: false, health-check: {enable: true, interval: 600, url: "http://www.gstatic.com/generate_204"}}
+  主线路: {type: "http", url: "https://s.youyun666.site/link/0RHTFWqnOFZ68SlY?clash=1", interval: 86400, path: "./proxy_provider/jc.yaml", health-check: {enable: true, interval: 600, url: "http://www.gstatic.com/generate_204"}}
 
 proxy-groups:
   - {name: "主线路", type: "select", use: ["主线路"], health-check: {enable: true, interval: 60, url: "http://www.gstatic.com/generate_204"}}
@@ -33,58 +34,57 @@ proxy-groups:
   - {name: "专线-土耳其07", type: "relay", proxies: ["自动切换", "土耳其07"]}
   - {name: "专线-土耳其08", type: "relay", proxies: ["自动切换", "土耳其08"]}
 
-
 rules:
-  - DOMAIN,payments.google.com,消费
-  - DOMAIN-SUFFIX,payments-pa.googleapis.com,消费
-  - DOMAIN,play-fe.googleapis.com,消费
-  - DOMAIN,myaccount.google.com,主线路
-  - DOMAIN-KEYWORD,accounts.google.com,主线路
-  - DOMAIN,sspanel.net,消费
-  - DOMAIN-SUFFIX,google.com,主线路
-  - DOMAIN-SUFFIX,googleapis.com,主线路
-  - DOMAIN-SUFFIX,gstatic.com,主线路
-  - DOMAIN-SUFFIX,ggpht.com,主线路
-  - DOMAIN-SUFFIX,gvt1.com,消费
-  - DOMAIN-SUFFIX,android.com,主线路
-  - DOMAIN-KEYWORD,google,主线路
-  - DOMAIN-KEYWORD,gmail,主线路
-  - DOMAIN-KEYWORD,youtube,主线路
-  - DOMAIN-SUFFIX,ipapi.co,主线路
-  - DOMAIN-SUFFIX,ip-api.com,主线路
-  - DOMAIN-SUFFIX,api.ip.sb,主线路
-  - DOMAIN-SUFFIX,IPInfo.io,主线路
-  - DOMAIN-SUFFIX,ipip.net,主线路
-  - DOMAIN-SUFFIX,skk.moe,主线路
-  - DOMAIN-KEYWORD,game,主线路
-  - DOMAIN-KEYWORD,googlevideo.com,主线路
-  - DOMAIN-SUFFIX,1password.com,DIRECT
-  - DOMAIN-SUFFIX,vultr.com,DIRECT
-  - DOMAIN-SUFFIX,mb3admin.com,DIRECT
-  - DOMAIN-SUFFIX,rixcloud.io,DIRECT
-  - DOMAIN-SUFFIX,tempestapp.io,DIRECT
-  - DOMAIN-SUFFIX,baidu.com,DIRECT
-  - DOMAIN-SUFFIX,baidu-int.com,DIRECT
-  - DOMAIN-SUFFIX,erebor.douban.com,DIRECT
-  - DOMAIN,mtalk.google.com,DIRECT
-  - DOMAIN,alt1-mtalk.google.com,DIRECT
-  - DOMAIN,alt2-mtalk.google.com,DIRECT
-  - DOMAIN,alt3-mtalk.google.com,DIRECT
-  - DOMAIN,alt4-mtalk.google.com,DIRECT
-  - DOMAIN,alt5-mtalk.google.com,DIRECT
-  - DOMAIN,alt6-mtalk.google.com,DIRECT
-  - DOMAIN,alt7-mtalk.google.com,DIRECT
-  - DOMAIN,alt8-mtalk.google.com,DIRECT
-  - DOMAIN,alt9-mtalk.google.com,DIRECT
-  - DOMAIN,captive.apple.com,DIRECT
-  - DOMAIN,time-ios.apple.com,DIRECT
-  - DOMAIN-SUFFIX,gateway.push-apple.com.akadns.net,DIRECT
-  - DOMAIN-SUFFIX,push.apple.com,DIRECT
-  - DOMAIN-KEYWORD,github,主线路
-  - DOMAIN-SUFFIX,github.com,主线路
-  - DOMAIN-SUFFIX,flowercloud.net,主线路
-  - DOMAIN-SUFFIX,socloud.me,主线路
-  - DOMAIN-SUFFIX,ytoo.asia,主线路
-  - DOMAIN-SUFFIX,ytoo.co.uk,主线路
-  - GEOIP,CN,DIRECT
-  - MATCH,主线路
+  - [cite_start]DOMAIN,payments.google.com,消费 [cite: 3]
+  - [cite_start]DOMAIN-SUFFIX,payments-pa.googleapis.com,消费 [cite: 3]
+  - [cite_start]DOMAIN,play-fe.googleapis.com,消费 [cite: 3]
+  - [cite_start]DOMAIN,myaccount.google.com,主线路 [cite: 3]
+  - [cite_start]DOMAIN-KEYWORD,accounts.google.com,主线路 [cite: 4]
+  - [cite_start]DOMAIN,sspanel.net,消费 [cite: 4]
+  - [cite_start]DOMAIN-SUFFIX,google.com,主线路 [cite: 4]
+  - [cite_start]DOMAIN-SUFFIX,googleapis.com,主线路 [cite: 4]
+  - [cite_start]DOMAIN-SUFFIX,gstatic.com,主线路 [cite: 4]
+  - [cite_start]DOMAIN-SUFFIX,ggpht.com,主线路 [cite: 4]
+  - [cite_start]DOMAIN-SUFFIX,gvt1.com,消费 [cite: 4]
+  - [cite_start]DOMAIN-SUFFIX,android.com,主线路 [cite: 4]
+  - [cite_start]DOMAIN-KEYWORD,google,主线路 [cite: 4]
+  - [cite_start]DOMAIN-KEYWORD,gmail,主线路 [cite: 4]
+  - [cite_start]DOMAIN-KEYWORD,youtube,主线路 [cite: 4]
+  - [cite_start]DOMAIN-SUFFIX,ipapi.co,主线路 [cite: 4]
+  - [cite_start]DOMAIN-SUFFIX,ip-api.com,主线路 [cite: 4]
+  - [cite_start]DOMAIN-SUFFIX,api.ip.sb,主线路 [cite: 4]
+  - [cite_start]DOMAIN-SUFFIX,IPInfo.io,主线路 [cite: 4]
+  - [cite_start]DOMAIN-SUFFIX,ipip.net,主线路 [cite: 4]
+  - [cite_start]DOMAIN-SUFFIX,skk.moe,主线路 [cite: 4]
+  - [cite_start]DOMAIN-KEYWORD,game,主线路 [cite: 4]
+  - [cite_start]DOMAIN-KEYWORD,googlevideo.com,主线路 [cite: 4]
+  - [cite_start]DOMAIN-SUFFIX,1password.com,DIRECT [cite: 4]
+  - [cite_start]DOMAIN-SUFFIX,vultr.com,DIRECT [cite: 4]
+  - [cite_start]DOMAIN-SUFFIX,mb3admin.com,DIRECT [cite: 4]
+  - [cite_start]DOMAIN-SUFFIX,rixcloud.io,DIRECT [cite: 4]
+  - [cite_start]DOMAIN-SUFFIX,tempestapp.io,DIRECT [cite: 4]
+  - [cite_start]DOMAIN-SUFFIX,baidu.com,DIRECT [cite: 4]
+  - [cite_start]DOMAIN-SUFFIX,baidu-int.com,DIRECT [cite: 4]
+  - [cite_start]DOMAIN-SUFFIX,erebor.douban.com,DIRECT [cite: 4]
+  - [cite_start]DOMAIN,mtalk.google.com,DIRECT [cite: 4]
+  - [cite_start]DOMAIN,alt1-mtalk.google.com,DIRECT [cite: 4]
+  - [cite_start]DOMAIN,alt2-mtalk.google.com,DIRECT [cite: 4]
+  - [cite_start]DOMAIN,alt3-mtalk.google.com,DIRECT [cite: 4]
+  - [cite_start]DOMAIN,alt4-mtalk.google.com,DIRECT [cite: 4]
+  - [cite_start]DOMAIN,alt5-mtalk.google.com,DIRECT [cite: 4]
+  - [cite_start]DOMAIN,alt6-mtalk.google.com,DIRECT [cite: 5]
+  - [cite_start]DOMAIN,alt7-mtalk.google.com,DIRECT [cite: 5]
+  - [cite_start]DOMAIN,alt8-mtalk.google.com,DIRECT [cite: 5]
+  - [cite_start]DOMAIN,alt9-mtalk.google.com,DIRECT [cite: 5]
+  - [cite_start]DOMAIN,captive.apple.com,DIRECT [cite: 5]
+  - [cite_start]DOMAIN,time-ios.apple.com,DIRECT [cite: 5]
+  - [cite_start]DOMAIN-SUFFIX,gateway.push-apple.com.akadns.net,DIRECT [cite: 5]
+  - [cite_start]DOMAIN-SUFFIX,push.apple.com,DIRECT [cite: 5]
+  - [cite_start]DOMAIN-KEYWORD,github,主线路 [cite: 5]
+  - [cite_start]DOMAIN-SUFFIX,github.com,主线路 [cite: 5]
+  - [cite_start]DOMAIN-SUFFIX,flowercloud.net,主线路 [cite: 5]
+  - [cite_start]DOMAIN-SUFFIX,socloud.me,主线路 [cite: 5]
+  - [cite_start]DOMAIN-SUFFIX,ytoo.asia,主线路 [cite: 5]
+  - [cite_start]DOMAIN-SUFFIX,ytoo.co.uk,主线路 [cite: 5]
+  - [cite_start]GEOIP,CN,DIRECT [cite: 5]
+  - [cite_start]MATCH,主线路 [cite: 5]
