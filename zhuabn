@@ -7,47 +7,13 @@ external-controller: 127.0.0.1:9090
 
 # 1. 代理节点配置
 proxies:
-  # 保留原有的高性能前置节点 
+  # 高性能前置加密节点
   - {name: "前置-1", type: "ss", server: "gz.xn--1lqrb57uoq8a.com", port: 21642, cipher: "aes-128-gcm", password: "382a4468-399d-4e82-b0da-65880f250a0a", udp: true}
   - {name: "前置-2", type: "ss", server: "gz.xn--1lqrb57uoq8a.com", port: 14779, cipher: "aes-128-gcm", password: "382a4468-399d-4e82-b0da-65880f250a0a", udp: true}
   
-  # 替换为你提供的最新土耳其落地节点
-  - {name: "土耳其-落地01", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-1DAiGs-sessTime-5", password: "KB50dS", udp: true}
-  - {name: "土耳其-落地02", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-DCVw-sessTime-5", password: "KB50dS", udp: true}
-  - {name: "土耳其-落地03", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-NlZEQ-sessTime-5", password: "KB50dS", udp: true}
-  - {name: "土耳其-落地04", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-C-sessTime-5", password: "KB50dS", udp: true}
-  - {name: "土耳其-落地05", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-16-sessTime-5", password: "KB50dS", udp: true}
-
-# 2. 订阅提供者
-proxy-providers:
-  主线路:
-    type: http
-    url: "https://s.youyun666.site/link/0RHTFWqnOFZ68SlY?clash=1"
-    interval: 86400
-    path: "./proxy_provider/main_sub.yaml"
-    health-check: {enable: true, interval: 600, url: "http://www.gstatic.com/generate_204"}
-
-# 3. 策略组优化
-proxy-groups:
-  # 自动选择最快的前置节点 
-  - {name: "前置自动切换", type: "fallback", url: "http://www.gstatic.com/generate_204", interval: 30, proxies: ["前置-1", "前置-2"]}
-
-  # 消费组：通过中继模式关联前置与落地
-  - {name: "消费", type: "select", proxies: ["专线-土耳其01", "专线-土耳其02", "专线-土耳其03"]}
-
-  - {name: "主线路", type: "select", use: ["主线路"]}
-
-  # 中继链路：前置节点 -> 落地节点 
-  - {name: "专线-土耳其01", type: "relay", proxies: ["前置自动切换", "土耳其-落地01"]}
-  - {name: "专线-土耳其02", type: "relay", proxies: ["前置自动切换", "土耳其-落地02"]}
-  - {name: "专线-土耳其03", type: "relay", proxies: ["前置自动切换", "土耳其-落地03"]}
-
-# 4. 分流规则 
-rules:
-  - DOMAIN,payments.google.com,消费
-  - DOMAIN-SUFFIX,payments-pa.googleapis.com,消费
-  - DOMAIN,play-fe.googleapis.com,消费
-  - DOMAIN,sspanel.net,消费
-  - DOMAIN-SUFFIX,google.com,主线路
-  - GEOIP,CN,DIRECT
-  - MATCH,主线路
+  # 替换为你最新的 5 条土耳其落地节点
+  - {name: "土耳其-落地01", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-J-sessTime-5", password: "KB50dS", udp: true}
+  - {name: "土耳其-落地02", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-YWJC5r-sessTime-5", password: "KB50dS", udp: true}
+  - {name: "土耳其-落地03", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-AR-sessTime-5", password: "KB50dS", udp: true}
+  - {name: "土耳其-落地04", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-BQw-sessTime-5", password: "KB50dS", udp: true}
+  - {name: "土耳其-落地05", type: "socks5", server: "us.udeal
