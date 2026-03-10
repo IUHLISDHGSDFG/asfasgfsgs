@@ -15,7 +15,6 @@ proxies:
   - {name: "土耳其02", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-N9q-sessTime-5", password: "KB50dS", udp: true}
   - {name: "土耳其03", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-N9q-sessTime-5", password: "KB50dS", udp: true}
   - {name: "土耳其04", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-N9q-sessTime-5", password: "KB50dS", udp: true}
-  # 修复了原文件中此处的物理断行 [cite: 2]
   - {name: "土耳其05", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-N9q-sessTime-5", password: "KB50dS", udp: true}
 
 proxy-providers:
