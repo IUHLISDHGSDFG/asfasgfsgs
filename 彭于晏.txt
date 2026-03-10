@@ -5,40 +5,30 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 
-# 1. 订阅源
+# 1. 代理节点配置
+proxies:
+  # 高性能前置节点
+  - {name: "前置-1", type: "ss", server: "gz.xn--1lqrb57uoq8a.com", port: 21642, cipher: "aes-128-gcm", password: "382a4468-399d-4e82-b0da-65880f250a0a", udp: true}
+  - {name: "前置-2", type: "ss", server: "gz.xn--1lqrb57uoq8a.com", port: 14779, cipher: "aes-128-gcm", password: "382a4468-399d-4e82-b0da-65880f250a0a", udp: true}
+  
+  # 最新替换的 5 条土耳其落地节点
+  - {name: "土耳其-落地01", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-J-sessTime-5", password: "KB50dS", udp: true}
+  - {name: "土耳其-落地02", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-YWJC5r-sessTime-5", password: "KB50dS", udp: true}
+  - {name: "土耳其-落地03", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-AR-sessTime-5", password: "KB50dS", udp: true}
+  - {name: "土耳其-落地04", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-BQw-sessTime-5", password: "KB50dS", udp: true}
+  - {name: "土耳其-落地05", type: "socks5", server: "us.udealproxy.com", port: 6666, username: "userId-1066-custom-3711-region-tr_adana_adana-session-oD-sessTime-5", password: "KB50dS", udp: true}
+
+# 2. 外部订阅源
 proxy-providers:
   主线路:
     type: http
     url: "https://s.youyun666.site/link/0RHTFWqnOFZ68SlY?clash=1"
     interval: 86400
     path: "./proxy_provider/main_sub.yaml"
-    health-check:
-      enable: true
-      interval: 600
-      url: "http://www.gstatic.com/generate_204"
-  # 注意：API返回的纯文本在部分客户端可能需转换，这里保持标准格式
-  土耳其动态源:
-    type: http
-    url: "http://usapi.udealproxy.com:7777/iplist?custom=3711&password=KB50dS&num=5&re_type=1&lb=1&region=tr&st=adana&city=adana"
-    interval: 300
-    path: "./proxy_provider/tr_api.yaml"
-    health-check:
-      enable: true
-      interval: 60
-      url: "http://www.gstatic.com/generate_204"
+    health-check: {enable: true, interval: 600, url: "http://www.gstatic.com/generate_204"}
 
-# 2. 静态前置节点
-proxies:
-  - {name: "前置-1", type: "ss", server: "gz.xn--1lqrb57uoq8a.com", port: 21642, cipher: "aes-128-gcm", password: "382a4468-399d-4e82-b0da-65880f250a0a", udp: true}
-  - {name: "前置-2", type: "ss", server: "gz.xn--1lqrb57uoq8a.com", port: 14779, cipher: "aes-128-gcm", password: "382a4468-399d-4e82-b0da-65880f250a0a", udp: true}
-
-# 3. 策略组 (确保这里的横杠 - 后面有空格，且上下对齐)
+# 3. 策略组
 proxy-groups:
-  - name: "主线路"
-    type: select
-    use:
-      - 主线路
-
   - name: "前置自动切换"
     type: fallback
     url: "http://www.gstatic.com/generate_204"
@@ -48,12 +38,27 @@ proxy-groups:
       - 前置-2
 
   - name: "消费"
-    type: relay
+    type: select
     proxies:
-      - 前置自动切换
-      - 土耳其动态源
+      - 专线-土耳其01
+      - 专线-土耳其02
+      - 专线-土耳其03
+      - 专线-土耳其04
+      - 专线-土耳其05
 
-# 4. 分流规则
+  - name: "主线路"
+    type: select
+    use:
+      - 主线路
+
+  # 中继链路定义 (Relay: 前置 -> 落地)
+  - {name: "专线-土耳其01", type: "relay", proxies: ["前置自动切换", "土耳其-落地01"]}
+  - {name: "专线-土耳其02", type: "relay", proxies: ["前置自动切换", "土耳其-落地02"]}
+  - {name: "专线-土耳其03", type: "relay", proxies: ["前置自动切换", "土耳其-落地03"]}
+  - {name: "专线-土耳其04", type: "relay", proxies: ["前置自动切换", "土耳其-落地04"]}
+  - {name: "专线-土耳其05", type: "relay", proxies: ["前置自动切换", "土耳其-落地05"]}
+
+# 4. 自动化分流规则
 rules:
   - DOMAIN,payments.google.com,消费
   - DOMAIN-SUFFIX,payments-pa.googleapis.com,消费
@@ -63,15 +68,3 @@ rules:
   - DOMAIN-KEYWORD,github,主线路
   - GEOIP,CN,DIRECT
   - MATCH,主线路
-  - [cite_start]DOMAIN,sspanel.net,消费 [cite: 15]
-  
-  # 常用服务走主线路 [cite: 16, 17]
-  - [cite_start]DOMAIN-SUFFIX,google.com,主线路 [cite: 16]
-  - [cite_start]DOMAIN-KEYWORD,github,主线路 [cite: 17]
-  - [cite_start]DOMAIN-KEYWORD,youtube,主线路 [cite: 16]
-  
-  # 国内流量直连 [cite: 17]
-  - [cite_start]GEOIP,CN,DIRECT [cite: 17]
-  - [cite_start]MATCH,主线路 [cite: 17]
-
-
