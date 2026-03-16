@@ -4,34 +4,95 @@ allow-lan: true
 mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
+
 proxies:
-  - {name: "专线-Frontend",type:"vmess","server":"ys60vaxj.cdn.node.a.corelink8.net","port":20695,"uuid":"bd17488c-ebf4-3cdd-8dc0-2ff08eb33c9f","alterId":0,"cipher":"auto","udp":true,"tags":"hk","network":"ws","ws-opts":{"path":"/acaaaad0-54f5-4e10-94bb-1e6ab04649e1.y.live02.m3u8"},"skip-cert-verify":false}
-  - {name: "专线-Frontend-1",type:"vmess","server":"yyrfjuah.cdn.node.a.corelink8.net","port":20674,"uuid":"bd17488c-ebf4-3cdd-8dc0-2ff08eb33c9f","alterId":0,"cipher":"auto","udp":true,"tags":"jp","network":"ws","ws-opts":{"path":"/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"},"skip-cert-verify":false}
-  - {name: "专线-Frontend-2",type:"vmess","server":"yyrbjp.cdn.node.a.corelink8.net","port":20672,"uuid":"bd17488c-ebf4-3cdd-8dc0-2ff08eb33c9f","alterId":0,"cipher":"auto","udp":true,"tags":"jp","network":"ws","ws-opts":{"path":"/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"},"skip-cert-verify":false}
-  - {name: "专线-Frontend-3",type:"vmess","server":"yyrfjuah.cdn.node.a.corelink8.net","port":20673,"uuid":"bd17488c-ebf4-3cdd-8dc0-2ff08eb33c9f","alterId":0,"cipher":"auto","udp":true,"tags":"jp","network":"ws","ws-opts":{"path":"/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"},"skip-cert-verify":false}
-  - {name: "土耳其01", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-N9q-sessTime-5", password: "KB50dS", udp: true}
-  - {name: "土耳其02", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-N9q-sessTime-5", password: "KB50dS", udp: true}
-  - {name: "土耳其03", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-N9q-sessTime-5", password: "KB50dS", udp: true}
-  - {name: "土耳其04", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-N9q-sessTime-5", password: "KB50dS", udp: true}
-  - {name: "土耳其05", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-N9q-sessTime-5", password: "KB50dS", udp: true}
-  - {name: "土耳其06", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-N9q-sessTime-5", password: "KB50dS", udp: true}
-  - {name: "土耳其07", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-N9q-sessTime-5", password: "KB50dS", udp: true}
-  - {name: "土耳其08", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-N9q-sessTime-5", password: "KB50dS", udp: true}
+  - {name: "专线-Frontend", "type":"vmess","server":"f15q.cdn.node.a.corelink8.net","port":20426,"uuid":"bd17488c-ebf4-3cdd-8dc0-2ff08eb33c9f","alterId":0,"cipher":"auto","udp":true,"tags":"hk","network":"ws","ws-opts":{"path":"/197c2808-5cda-4362-b137-e82cd56d87cc.y.live03.m3u8"},"skip-cert-verify":false}
+  - {name: "专线-Frontend-1", "type":"vmess","server":"t9e6.cdn.node.a.corelink8.net","port":20478,"uuid":"bd17488c-ebf4-3cdd-8dc0-2ff08eb33c9f","alterId":0,"cipher":"auto","udp":true,"tags":"hk","network":"ws","ws-opts":{"path":"/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"},"skip-cert-verify":false}
+  - {name: "专线-Frontend-2", "type":"ssr","server":"t9e6.cdn.node.a.corelink8.net","port":20489,"uuid":"bd17488c-ebf4-3cdd-8dc0-2ff08eb33c9f","alterId":0,"cipher":"auto","udp":true,"tags":"hk","network":"ws","ws-opts":{"path":"/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"},"skip-cert-verify":false}
+  - {name: "专线-Frontend-3", "type":"ssr","server":"dhayuwsg.cdn.node.a.corelink8.net","port":20505,"uuid":"bd17488c-ebf4-3cdd-8dc0-2ff08eb33c9f","alterId":0,"cipher":"auto","udp":true,"tags":"sg","network":"ws","ws-opts":{"path":"/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"},"skip-cert-verify":false}
+  - {name: "土耳其01", type: "socks5", server: "qu78xnix.as.thordata.net", port: "9999", username: "td-customer-reNUImfuhcq4-country-TR-sessid-TR5nzar78nhskp330-sesstime-90", password: "FxVWsf1lwsdl", udp: true}
+  - {name: "土耳其02", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-Smf-sessTime-100", password: "KB50dS", udp: true}
+  - {name: "土耳其03", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-Smf-sessTime-100", password: "KB50dS", udp: true}
+  - {name: "土耳其04", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-Smf-sessTime-100", password: "KB50dS", udp: true}
+  - {name: "土耳其05", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-Smf-sessTime-100", password: "KB50dS", udp: true}
+  - {name: "土耳其06", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-Smf-sessTime-100", password: "KB50dS", udp: true}
+  - {name: "土耳其07", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-Smf-sessTime-100", password: "KB50dS", udp: true}
+  - {name: "土耳其08", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-Smf-sessTime-100", password: "KB50dS", udp: true}
+
 proxy-providers:
-  主线路: {type: "http", url: "https://s.youyun666.site/link/0RHTFWqnOFZ68SlY?clash=1", interval: 86400, path: "./proxy_provider/jc.yaml", udp: false, health-check: {enable: true, interval: 600, url: "http://www.gstatic.com/generate_204"}}
+  主线路:
+    type: http
+    url: "https://s.youyun666.site/link/S6k19ldcT6uaCAkr?clash=1"
+    path: ./proxy_provider/jc.yaml
+    interval: 600
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 600
 
 proxy-groups:
-  - {name: "主线路", type: "select", use: ["主线路"], health-check: {enable: true, interval: 60, url: "http://www.gstatic.com/generate_204"}}
-  - {name: "消费", type: "select", proxies: ["专线-土耳其01", "专线-土耳其02", "专线-土耳其03", "专线-土耳其04", "专线-土耳其05", "专线-土耳其06", "专线-土耳其07", "专线-土耳其08"]}
-  - {name: "自动切换", type: "fallback", url: "http://www.gstatic.com/generate_204", interval: 30, proxies: ["专线-Frontend", "专线-Frontend-2", "专线-Frontend-3", "专线-Frontend-1"]}
-  - {name: "专线-土耳其01", type: "relay", proxies: ["自动切换", "土耳其01"]}
-  - {name: "专线-土耳其02", type: "relay", proxies: ["自动切换", "土耳其02"]}
-  - {name: "专线-土耳其03", type: "relay", proxies: ["自动切换", "土耳其03"]}
-  - {name: "专线-土耳其04", type: "relay", proxies: ["自动切换", "土耳其04"]}
-  - {name: "专线-土耳其05", type: "relay", proxies: ["自动切换", "土耳其05"]}
-  - {name: "专线-土耳其06", type: "relay", proxies: ["自动切换", "土耳其06"]}
-  - {name: "专线-土耳其07", type: "relay", proxies: ["自动切换", "土耳其07"]}
-  - {name: "专线-土耳其08", type: "relay", proxies: ["自动切换", "土耳其08"]}
+  - name: "主线路"
+    type: select
+    use:
+      - 主线路
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 120
+
+  - name: "消费"
+    type: select
+    proxies:
+      - "专线-土耳其01"
+      - "专线-土耳其02"
+      - "专线-土耳其03"
+      - "专线-土耳其04"
+      - "专线-土耳其05"
+      - "专线-土耳其06"
+      - "专线-土耳其07"
+      - "专线-土耳其08"
+
+  - name: "自动切换"
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - "专线-Frontend"
+      - "专线-Frontend-1"
+      - "专线-Frontend-2"
+      - "专线-Frontend-3"
+
+  - name: "专线-土耳其01"
+    type: relay
+    proxies: ["自动切换", "土耳其01"]
+
+  - name: "专线-土耳其02"
+    type: relay
+    proxies: ["自动切换", "土耳其02"]
+
+  - name: "专线-土耳其03"
+    type: relay
+    proxies: ["自动切换", "土耳其03"]
+
+  - name: "专线-土耳其04"
+    type: relay
+    proxies: ["自动切换", "土耳其04"]
+
+  - name: "专线-土耳其05"
+    type: relay
+    proxies: ["自动切换", "土耳其05"]
+
+  - name: "专线-土耳其06"
+    type: relay
+    proxies: ["自动切换", "土耳其06"]
+
+  - name: "专线-土耳其07"
+    type: relay
+    proxies: ["自动切换", "土耳其07"]
+
+  - name: "专线-土耳其08"
+    type: relay
+    proxies: ["自动切换", "土耳其08"]
 
 
 rules:
