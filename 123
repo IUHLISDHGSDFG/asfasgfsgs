@@ -20,20 +20,79 @@ proxies:
   - {name: "土耳其08", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-Smf-sessTime-100", password: "KB50dS", udp: true}
 
 proxy-providers:
-  主线路: {type: "http", url:"https://s.youyun666.site/link/S6k19ldcT6uaCAkr?clash=1",udp: false, health-check: {enable: true, interval: 600, url: "http://www.gstatic.com/generate_204"}}
+  主线路:
+    type: http
+    url: "https://s.youyun666.site/link/S6k19ldcT6uaCAkr?clash=1"
+    path: ./proxy_provider/jc.yaml
+    interval: 600
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 600
 
 proxy-groups:
-  - {name: "主线路", type: "select", use: ["主线路"], health-check: {enable: true, interval: 120, url: "http://www.gstatic.com/generate_204"}}
-  - {name: "消费", type: "select", proxies: [ "专线-土耳其01", "专线-土耳其02", "专线-土耳其03", "专线-土耳其04", "专线-土耳其05", "专线-土耳其06", "专线-土耳其07", "专线-土耳其08"]}
-  - {name: "自动切换", type: "fallback", url: "http://www.gstatic.com/generate_204", interval: 300, proxies: ["专线-Frontend", "专线-Frontend-1", "专线-Frontend-2", "专线-Frontend-3"]}
-  - {name: "专线-土耳其01", type: "relay", proxies: ["自动切换", "土耳其01"]}
-  - {name: "专线-土耳其02", type: "relay", proxies: ["自动切换", "土耳其02"]}
-  - {name: "专线-土耳其03", type: "relay", proxies: ["自动切换", "土耳其03"]}
-  - {name: "专线-土耳其04", type: "relay", proxies: ["自动切换", "土耳其04"]}
-  - {name: "专线-土耳其05", type: "relay", proxies: ["自动切换", "土耳其05"]}
-  - {name: "专线-土耳其06", type: "relay", proxies: ["自动切换", "土耳其06"]}
-  - {name: "专线-土耳其07", type: "relay", proxies: ["自动切换", "土耳其07"]}
-  - {name: "专线-土耳其08", type: "relay", proxies: ["自动切换", "土耳其08"]}
+  - name: "主线路"
+    type: select
+    use:
+      - 主线路
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 120
+
+  - name: "消费"
+    type: select
+    proxies:
+      - "专线-土耳其01"
+      - "专线-土耳其02"
+      - "专线-土耳其03"
+      - "专线-土耳其04"
+      - "专线-土耳其05"
+      - "专线-土耳其06"
+      - "专线-土耳其07"
+      - "专线-土耳其08"
+
+  - name: "自动切换"
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - "专线-Frontend"
+      - "专线-Frontend-1"
+      - "专线-Frontend-2"
+      - "专线-Frontend-3"
+
+  - name: "专线-土耳其01"
+    type: relay
+    proxies: ["自动切换", "土耳其01"]
+
+  - name: "专线-土耳其02"
+    type: relay
+    proxies: ["自动切换", "土耳其02"]
+
+  - name: "专线-土耳其03"
+    type: relay
+    proxies: ["自动切换", "土耳其03"]
+
+  - name: "专线-土耳其04"
+    type: relay
+    proxies: ["自动切换", "土耳其04"]
+
+  - name: "专线-土耳其05"
+    type: relay
+    proxies: ["自动切换", "土耳其05"]
+
+  - name: "专线-土耳其06"
+    type: relay
+    proxies: ["自动切换", "土耳其06"]
+
+  - name: "专线-土耳其07"
+    type: relay
+    proxies: ["自动切换", "土耳其07"]
+
+  - name: "专线-土耳其08"
+    type: relay
+    proxies: ["自动切换", "土耳其08"]
 
 
 rules:
