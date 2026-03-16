@@ -11,13 +11,13 @@ proxies:
   - {name: "专线-Frontend-2", "type":"vmess","server":"t9e6.cdn.node.a.corelink8.net","port":20489,"uuid":"bd17488c-ebf4-3cdd-8dc0-2ff08eb33c9f","alterId":0,"cipher":"auto","udp":true,"tags":"hk","network":"ws","ws-opts":{"path":"/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"},"skip-cert-verify":false}
   - {name: "专线-Frontend-3", "type":"vmess","server":"dhayuwsg.cdn.node.a.corelink8.net","port":20505,"uuid":"bd17488c-ebf4-3cdd-8dc0-2ff08eb33c9f","alterId":0,"cipher":"auto","udp":true,"tags":"sg","network":"ws","ws-opts":{"path":"/009c250b-54f5-43a8-8b18-dccbb5d8c66a.y.live01.m3u8"},"skip-cert-verify":false}
   - {name: "土耳其01", type: "socks5", server: "qu78xnix.as.thordata.net", port: "9999", username: "td-customer-reNUImfuhcq4-country-TR-sessid-TR5nzar78nhskp330-sesstime-90", password: "FxVWsf1lwsdl", udp: true}
-  - {name: "土耳其02", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-3q-sessTime-5", password: "KB50dS", udp: true}
-  - {name: "土耳其03", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-L-sessTime-5", password: "KB50dS", udp: true}
-  - {name: "土耳其04", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-Smf-sessTime-5", password: "KB50dS", udp: true}
-  - {name: "土耳其05", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-Smf-sessTime-5", password: "KB50dS", udp: true}
-  - {name: "土耳其06", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-Smf-sessTime-5", password: "KB50dS", udp: true}
-  - {name: "土耳其07", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-Smf-sessTime-5", password: "KB50dS", udp: true}
-  - {name: "土耳其08", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-Smf-sessTime-5", password: "KB50dS", udp: true}
+  - {name: "土耳其02", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-KdN-sessTime-20", password: "KB50dS", udp: true}
+  - {name: "土耳其03", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-uf-sessTime-20", password: "KB50dS", udp: true}
+  - {name: "土耳其04", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-ZG5TxT-sessTime-20", password: "KB50dS", udp: true}
+  - {name: "土耳其05", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-TnbeMa-sessTime-20", password: "KB50dS", udp: true}
+  - {name: "土耳其06", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-custom-sessTime-20", password: "KB50dS", udp: true}
+  - {name: "土耳其07", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-Smf-sessTime-20", password: "KB50dS", udp: true}
+  - {name: "土耳其08", type: "socks5", server: "us.udealproxy.com", port: "6666", username: "userId-1066-custom-3711-region-tr_adana_adana-session-Smf-sessTime-20", password: "KB50dS", udp: true}
 
 proxy-providers:
   主线路:
